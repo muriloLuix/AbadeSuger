@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --purple-bg: #312682;
+    --yellow-bg: #f6b548;
+    --white: #fff;
+}
