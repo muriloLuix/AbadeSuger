@@ -8,4 +8,4 @@ const elemento = document.querySelector('.general');
 
 setTimeout(() => {
     elemento.classList.add('animate');
-}, 2515);
+}, 2550);
