@@ -43,3 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
     interval = setInterval(showNextSlide, 5000);
   });
 });
+
+const cards = document.querySelectorAll(".card");
+
+function clickRotate() {
+  this.classList.toggle("rotated");
+}
+
+cards.forEach((card) => {
+  card.addEventListener("click", clickRotate);
+});
