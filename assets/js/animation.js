@@ -1,14 +1,14 @@
-window.addEventListener('load', function () {
-    setTimeout(function () {
-        document.querySelector('.loader-wrapper').style.display = 'none';
-    }, 2500);
-});
+// window.addEventListener('load', function () {
+//     setTimeout(function () {
+//         document.querySelector('.loader-wrapper').style.display = 'none';
+//     }, 2500);
+// });
 
-const elemento = document.querySelector('.general');
+// const elemento = document.querySelector('.general');
 
-setTimeout(() => {
-    elemento.classList.add('animate');
-}, 2550);
+// setTimeout(() => {
+//     elemento.classList.add('animate');
+// }, 2550);
 
 document.addEventListener("DOMContentLoaded", () => {
   const bannerInner = document.querySelector(".banner-inner");
