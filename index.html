@@ -3,217 +3,242 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Javascript -->
-    <script src="assets/js/animation.js" defer></script>
-    <!-- Css -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Boostrap -->
+    <!-- Boostrap -->
+    <!-- Scripts -->
+    <script src="assets/js/hoverEffect.js" defer></script>
+    <script src="assets/js/carrousel.js" defer></script>
+    <!-- Scripts -->
     <!-- Favicon -->
     <link
       rel="shortcut icon"
       href="assets/img/favicon.png"
       type="image/x-icon"
     />
-    <title>| Abade Suger</title>
+    <!-- Favicon -->
+    <!-- Css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Css -->
+    <title>Abade Suger - Editora</title>
   </head>
-
   <body>
-    <!-- <div class="loader-wrapper">
-        <div class="loader">
-            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
-                type="module"></script>
-            <dotlottie-player src="https://lottie.host/49923056-36b3-4e66-9d75-bd29db47d80f/JouzuGDhvu.json"
-                background="transparent" speed="1" style="width: 300px; height: 300px;" loop
-                autoplay></dotlottie-player>
-        </div>
-    </div> -->
-    <section class="general">
+    <div id="el"></div>
+    <div class="backgroundYellow">
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 1064 701"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter="url(#filter0_f_425_66)">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M352.872 225.655C414.269 190.761 491.258 165.391 557.433 190.228C622.136 214.513 629.603 306.31 683.416 349.719C732.133 389.017 813.478 376.127 850.483 426.622C889.004 479.188 885.714 551.314 878.6 616.061C871.057 684.72 856.308 756.607 808.735 806.605C761.152 856.615 690.807 880.726 621.952 885.795C558.67 890.455 495.574 868.912 442.821 833.546C397.031 802.848 387.088 740.979 347.971 702.119C300.596 655.055 216.788 645.556 191.405 583.784C165.299 520.253 188.903 446.205 217.108 383.649C246.247 319.017 291.265 260.669 352.872 225.655Z"
+            fill="#FFCA42"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_f_425_66"
+            x="0.111229"
+            y="0.280518"
+            width="1062.93"
+            height="1066.15"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feGaussianBlur
+              stdDeviation="90"
+              result="effect1_foregroundBlur_425_66"
+            />
+          </filter>
+        </defs>
+      </svg>
+    </div>
+    <div class="backgroundYellow2">
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 843 1080"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter="url(#filter0_f_425_65)">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M260.001 15.3336C361.257 -8.05906 482.267 -11.3933 563.012 53.9745C643.469 119.109 655.726 238.079 662.654 341.304C668.147 423.143 606.577 491.982 597.884 573.544C588.675 659.945 648.202 750.207 610.714 828.61C571.239 911.165 483.148 960.412 397.461 992.701C307.573 1026.57 206.578 1046.96 115.975 1015.05C26.9186 983.674 -34.9037 903.449 -84.245 823.013C-128.339 751.13 -130.528 666.052 -148.619 583.705C-168.367 493.812 -233.209 401.161 -195.352 317.259C-157.504 233.378 -41.3337 226.746 35.4018 175.866C113.686 123.959 168.46 36.482 260.001 15.3336Z"
+            fill="#FFA815"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_f_425_65"
+            x="-387"
+            y="-180"
+            width="1230"
+            height="1391"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feGaussianBlur
+              stdDeviation="90"
+              result="effect1_foregroundBlur_425_65"
+            />
+          </filter>
+        </defs>
+      </svg>
+    </div>
+    <div class="backgroundPurple">
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 682 777"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter="url(#filter0_f_425_63)">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M546.384 -68.7381C604.842 -59.642 669.253 -74.0875 717.979 -40.5764C766.277 -7.35947 768.571 61.9408 804.12 108.518C854.008 173.885 983.673 205.929 967.636 286.541C951.171 369.3 807.1 340.449 746.317 399.06C694.353 449.166 718.594 558.81 653.292 589.647C590.175 619.452 523.613 549.89 455.076 536.59C376.818 521.403 271.329 569.221 222.751 506.096C173.181 441.683 256.268 349.67 248.966 268.761C242.271 194.569 165.279 132.59 182.506 60.1123C199.974 -13.3789 265.309 -74.6752 336.599 -99.919C404.61 -124.002 475.084 -79.8323 546.384 -68.7381Z"
+            fill="#312682"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_f_425_63"
+            x="0"
+            y="-287"
+            width="1149"
+            height="1064"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feGaussianBlur
+              stdDeviation="90"
+              result="effect1_foregroundBlur_425_63"
+            />
+          </filter>
+        </defs>
+      </svg>
+    </div>
+    <div class="backgroundPurple2">
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 546 771"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter="url(#filter0_f_425_64)">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M400.159 186.415C441.695 182.393 483.762 173.398 522.801 188.148C566.671 204.723 621.565 227.654 630.968 273.621C640.821 321.784 577.127 354.997 566.762 403.052C557.56 445.72 594.161 491.625 575.446 531.055C555.94 572.152 512.908 602.717 468.159 610.798C424.468 618.689 385.818 585.626 343.255 572.988C300.852 560.396 249.784 567.854 218.427 536.643C186.704 505.068 182.183 455.451 180.23 410.723C178.409 369.019 187.38 327.601 207.708 291.148C227.026 256.505 257.05 229.462 291.88 210.508C325.033 192.466 362.596 190.052 400.159 186.415Z"
+            fill="#513DE1"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_f_425_64"
+            x="0"
+            y="0"
+            width="812"
+            height="792"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feGaussianBlur
+              stdDeviation="90"
+              result="effect1_foregroundBlur_425_64"
+            />
+          </filter>
+        </defs>
+      </svg>
+    </div>
+    <section class="transparentSection">
       <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="logo">
-            <a href="index.html"
-              ><img src="assets/img/favicon.png" alt="Logo"
-            /></a>
+        <div class="carousel">
+          <div class="carousel-container">
+            <div class="carousel-slide">
+              <div class="carousel-item">
+                <img src="assets/img/logoHeader.svg" alt="Imagem 1" />
+              </div>
+              <div class="carousel-item">
+                <img src="assets/img/logoCompleta.jpg" alt="Imagem 2" />
+              </div>
+              <div class="carousel-item">
+                <img src="assets/img/logoCompletaSemFundo.png" alt="Imagem 3" />
+              </div>
+            </div>
+            <a class="carousel-prev" href="#">‹</a>
+            <a class="carousel-next" href="#">›</a>
           </div>
-          <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
+        </div>
+
+        <div class="generalHeader">
+          <div class="logo">
+            <img src="assets/img/logoHeader.svg" alt="Logo Abade" />
+          </div>
+          <div class="navigation" id="nav">
+            <nav>
+              <ul>
+                <li>
+                  <a href="#">HOME<span class="animation"></span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Quem Somos</a>
+                <li>
+                  <a href="#">QUEM SOMOS<span class="animation"></span></a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Produtos
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">E-BOOKS</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">LIVROS FÍSICOS</a>
-                    </li>
-                  </ul>
+                <li>
+                  <a href="#">PRODUTOS<span class="animation"></span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Agenda</a>
+                <li>
+                  <a href="#">AGENDA<span class="animation"></span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Loja</a>
+                <li>
+                  <a href="#">LOJA<span class="animation"></span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contato</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Redes Sociais</a>
+                <li>
+                  <a href="#">CONTATO<span class="animation"></span></a>
                 </li>
               </ul>
-            </div>
+            </nav>
           </div>
-        </nav>
+        </div>
       </header>
-      <main>
-        <section class="banner">
-          <div class="banner">
-            <div class="banner-inner">
-              <div class="banner-item">
-                <img src="assets/img/testeBanner.jpg" alt="Livro 1" />
-              </div>
-              <div class="banner-item">
-                <img src="assets/img/livro2.jpg" alt="Livro 2" />
-              </div>
-              <div class="banner-item">
-                <img src="assets/img/livro3.jpg" alt="Livro 3" />
-              </div>
-            </div>
-            <button class="prev">&#10094;</button>
-            <button class="next">&#10095;</button>
-          </div>
-        </section>
-        <!--banner-->
-        <section class="cards">
-          <div class="background-images">
-            <img src="assets/img/livroIcone1.png" alt="Background Image 1" class="bg-img" />
-            <img src="assets/img/livroIcone2.png" alt="Background Image 2" class="bg-img" />
-            <!-- Adicione mais imagens conforme necessário -->
-          </div>
-          <div class="cards-wrapper">
-            <div class="card-container">
-              <div class="card">
-                <div class="card-contents card-front">
-                  <div class="card-depth">
-                    <h2>Nossas Inspirações</h2>
-                    <hr />
-                  </div>
-                </div>
-                <div class="card-contents card-back">
-                  <div class="card-depth">
-                    <h2>Click card again</h2>
-                    <hr />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-container">
-              <div class="card">
-                <div class="card-contents card-front">
-                  <div class="card-depth">
-                    <h2>agenda</h2>
-                    <hr />
-                  </div>
-                </div>
-                <div class="card-contents card-back">
-                  <div class="card-depth">
-                    <h2>Click card again</h2>
-                    <hr />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-container">
-              <div class="card">
-                <div class="card-contents card-front">
-                  <div class="card-depth">
-                    <h2>Noticias</h2>
-                    <hr />
-                  </div>
-                </div>
-                <div class="card-contents card-back">
-                  <div class="card-depth">
-                    <h2>Click card again</h2>
-                    <hr />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-container">
-              <div class="card">
-                <div class="card-contents card-front">
-                  <div class="card-depth">
-                    <h2>Nossa loja</h2>
-                    <hr />
-                  </div>
-                </div>
-                <div class="card-contents card-back">
-                  <div class="card-depth">
-                    <h2>Click card again</h2>
-                    <hr />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-container">
-              <div class="card">
-                <div class="card-contents card-front">
-                  <div class="card-depth">
-                    <h2>Quer publicar <br />uma obra?</h2>
-                    <hr />
-                  </div>
-                </div>
-                <div class="card-contents card-back">
-                  <div class="card-depth">
-                    <h2>Click card again</h2>
-                    <hr />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-container">
-              <div class="card">
-                <div class="card-contents card-front">
-                  <div class="card-depth">
-                    <h2>Indique uma <br />obra</h2>
-                    <hr />
-                  </div>
-                </div>
-                <div class="card-contents card-back">
-                  <div class="card-depth">
-                    <h2>Click card again</h2>
-                    <hr />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
     </section>
+    <main></main>
+    <footer></footer>
   </body>
 </html>
