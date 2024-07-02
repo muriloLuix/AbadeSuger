@@ -11,6 +11,17 @@
   scroll-behavior: smooth;
 }
 
+select,
+textarea,
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -21,11 +32,10 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: #c2bfbf;
-  opacity: .9;
+  opacity: 0.9;
   transition: 0.3s;
   border-radius: 20px;
 }
-
 
 :root {
   --background-color: #eaf5f7;
@@ -41,9 +51,70 @@
 /* Body Style */
 body {
   background-color: var(--background-color);
+  overflow-x: hidden;
 }
 
 /* Background Styles */
+@keyframes moveBackgroundYellow {
+  0% {
+    left: 6vw;
+    top: 37vh;
+  }
+  50% {
+    left: 10vw;
+    top: 30vh;
+  }
+  100% {
+    left: 6vw;
+    top: 37vh;
+  }
+}
+
+@keyframes moveBackgroundYellow2 {
+  0% {
+    left: -13vw;
+    top: 5vh;
+  }
+  50% {
+    left: -10vw;
+    top: 8vh;
+  }
+  100% {
+    left: -13vw;
+    top: 5vh;
+  }
+}
+
+@keyframes moveBackgroundPurple {
+  0% {
+    left: 71vw;
+    top: 54vh;
+  }
+  50% {
+    left: 75vw;
+    top: 50vh;
+  }
+  100% {
+    left: 71vw;
+    top: 54vh;
+  }
+}
+
+@keyframes moveBackgroundPurple2 {
+  0% {
+    left: 57vw;
+    top: -5vh;
+  }
+  50% {
+    left: 60vw;
+    top: 0vh;
+  }
+  100% {
+    left: 57vw;
+    top: -5vh;
+  }
+}
+
 .backgroundYellow {
   position: absolute;
   width: 40vw;
@@ -53,6 +124,7 @@ body {
   background: var(--yellow);
   filter: blur(5vw);
   transform: rotate(-30deg);
+  animation: moveBackgroundYellow 10s infinite;
 }
 
 .backgroundYellow2 {
@@ -63,6 +135,7 @@ body {
   top: 5vh;
   background: var(--dark-yellow);
   filter: blur(5vw);
+  animation: moveBackgroundYellow2 12s infinite;
 }
 
 .backgroundPurple {
@@ -73,6 +146,7 @@ body {
   top: 54vh;
   background: var(--purple);
   filter: blur(5vw);
+  animation: moveBackgroundPurple 14s infinite;
 }
 
 .backgroundPurple2 {
@@ -83,15 +157,15 @@ body {
   top: -5vh;
   background: var(--dark-purple);
   filter: blur(5vw);
+  animation: moveBackgroundPurple2 16s infinite;
 }
 
-/* Section with transparent background */
 .transparentSection {
   width: 90%;
   max-width: 90%;
   height: 84vh;
   background-color: transparent;
-  margin: 0 auto;
+  margin: 12vh auto;
   border-radius: 42px;
   margin-top: 2%;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
@@ -296,4 +370,129 @@ body {
 .card:nth-child(5) {
   background-image: url(../img/NOTICIAS.png);
   background-size: cover;
+}
+
+/* Footer Style */
+
+footer {
+  height: 100vh;
+}
+
+.generalFooter {
+  display: flex;
+  height: 52vh;
+}
+.logoFooter {
+  width: 10vw;
+  min-height: 50vh;
+  background-color: #ffa815;
+  border-top-left-radius: 28px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3em 7em;
+}
+
+.logoFooter img {
+  height: auto;
+  width: 9vw;
+}
+
+.contact {
+  background-color: #fff;
+  width: 100%;
+}
+
+.contact h1 {
+  color: #32268a;
+  font-family: var(--montserrat);
+  font-weight: 600;
+  padding: 2.5%;
+  font-size: 2.5rem;
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40vw;
+  justify-content: space-between;
+  padding: 2.5%;
+  font-family: var(--montserrat);
+}
+.form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #32268a;
+}
+.form-group {
+  flex: 1 1 45%;
+  margin-bottom: 10px;
+}
+
+.form-group:nth-child(2) {
+  margin-left: 1vw;
+}
+
+.form-group:nth-child(4) {
+  margin-left: 1vw;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #32268a;
+  height: 5vh;
+  max-height: 5vh;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-bottom: 2px solid #32268a;
+  height: 5vh;
+  max-height: 5vh;
+  appearance: none;
+  background-color: white;
+  font-family: var(--montserrat);
+}
+.books{
+  background-color: #fff;
+}
+.books img {
+  width: 23vw;
+  height: auto;
+}
+
+.purpleFooter {
+  background-color: #32268a;
+  height: 48vh;
+  position: relative;
+}
+
+.yellowLeft {
+  width: 10vw;
+  height: 18.2vh;
+  background-color: #ffa815;
+  display: flex;
+  justify-content: center;
+  padding: 3em 7em;
+}
+
+.triangle {
+  width: 6vw;
+  height: 6.6vw;
+  border-left: 6vw solid transparent; /* Metade da largura da base esquerda */
+  border-right: 6vw solid transparent; /* Metade da largura da base direita */
+  border-bottom: 6.6vw solid #32268a; /* Altura do triângulo e cor */
 }
