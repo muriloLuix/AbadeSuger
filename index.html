@@ -34,10 +34,6 @@
     <title>Abade Suger - Editora</title>
   </head>
   <body>
-    <div class="backgroundYellow"></div>
-    <div class="backgroundYellow2"></div>
-    <div class="backgroundPurple"></div>
-    <div class="backgroundPurple2"></div>
     <section class="transparentSection">
       <header>
         <div class="carousel">
@@ -77,12 +73,17 @@
                 />
               </div>
               <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="..." />
+                <img
+                  src="assets/img/MulherComRostoNoLivro.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
               </div>
               <div class="carousel-item">
                 <img src="..." class="d-block w-100" alt="..." />
               </div>
             </div>
+
             <button
               class="carousel-control-prev"
               type="button"
@@ -159,15 +160,15 @@
           <form class="form" action="" method="post">
             <div class="form-group">
               <label for="name">Nome</label>
-              <input type="text" name="name" id="name" />
+              <input type="text" name="name" id="name" required />
             </div>
             <div class="form-group">
               <label for="email">E-mail</label>
-              <input type="email" name="email" id="email" />
+              <input type="email" name="email" id="email" required />
             </div>
             <div class="form-group">
               <label for="option">Como podemos ajudar?</label>
-              <select name="option" id="option">
+              <select name="option" id="option" required>
                 <option value="" selected disabled></option>
                 <option value="1">teste</option>
                 <option value="2"></option>
@@ -175,7 +176,10 @@
             </div>
             <div class="form-group">
               <label for="msg">Mensagem</label>
-              <textarea name="mesg" id="msg"></textarea>
+              <textarea name="mesg" id="msg" required></textarea>
+            </div>
+            <div class="form-group form-group-button">
+              <button class="submit" type="submit">Enviar</button>
             </div>
           </form>
         </aside>
@@ -184,10 +188,75 @@
         </aside>
       </div>
       <div class="purpleFooter">
-        <aside class="yellowLeft">
-
-            <div class="triangle"></div>
+        <aside class="logoFooter2">
+  
         </aside>
+        <aside class="contentFooter">
+          <div class="footer-column">
+            <h3>Suporte</h3>
+            <ul>
+              <li><a href="#">Reclame aqui</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Socorro</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Mapa do site</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Quem somos</a></li>
+              <li><a href="#">Produtos</a></li>
+              <li><a href="#">Agenda</a></li>
+              <li><a href="#">Loja</a></li>
+              <li><a href="#">Contato</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Parceiros</h3>
+            <ul>
+              <li><a href="#">IBSEC</a></li>
+              <li><a href="#">IF</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Livros Físicos <span>↓</span></h3>
+            <ul>
+              <li>XXXXXX XX XXXXX</li>
+              <li>XXXXXX XX XXXXX</li>
+              <li>XXXXXX XX XXXXX</li>
+              <li>XXXXXX XX XXXXX</li>
+              <li>XXXXXX XX XXXXX</li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Artigos <span>↓</span></h3>
+            <ul>
+              <li>YYY YY YYY</li>
+              <li>YYY YY YYY</li>
+              <li>YYY YY YYY</li>
+              <li>YYY YY YYY</li>
+              <li>YYY YY YYY</li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>E-books <span>↓</span></h3>
+            <ul>
+              <li>ZZ ZZ ZZZ ZZ</li>
+              <li>ZZ ZZ ZZZ ZZ</li>
+              <li>ZZ ZZ ZZZ ZZ</li>
+              <li>ZZ ZZ ZZZ ZZ</li>
+              <li>ZZ ZZ ZZZ ZZ</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+      <div class="logos">
+        <div class="logo1">
+          <img src="assets/img/ECHO.png" alt="Logo Echo" />
+        </div>
+        <div class="logo2">
+          <img src="assets/img/LOGO.png" alt="Logo Abade" />
+        </div>
       </div>
     </footer>
   </body>
