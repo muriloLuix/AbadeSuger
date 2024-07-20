@@ -54,7 +54,7 @@ body {
   overflow-x: hidden;
   background-image: url(../img/backgroundPaginaInicial.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 /* Background Styles */

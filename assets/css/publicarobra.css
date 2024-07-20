@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c2bfbf;
+    opacity: 0.9;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+
+:root {
+    --background-color: #eaf5f7;
+    --text-color: #dfebed;
+    --dark-yellow: #ffa815;
+    --yellow: #ffca42;
+    --dark-purple: #312682;
+    --purple: #513de1;
+    --brand-color: #ffd200;
+    --montserrat: "Montserrat", sans-serif;
+}
+
+/* Body Style */
+body {
+    background-color: var(--background-color);
+    overflow-x: hidden;
+    background-image: url(../img/publiqueSuaObra.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Main Style */
+
+.transparentSection {
+    width: 90%;
+    max-width: 90%;
+    height: 88vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Adjust the opacity here */
+    margin: 0 auto;
+    border-radius: 42px;
+    margin-top: 2%;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+        rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+        rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    position: relative;
+}
+
+.generalDiv {
+    display: flex;
+}
+
+.texts {
+    padding: 2em;
+}
+
+.texts h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: var(--montserrat);
+    font-weight: 500;
+    font-size: 4rem;
+    letter-spacing: 3px;
+}
+
+.texts p {
+    color: #fff;
+    font-family: var(--montserrat);
+    width: 78%;
+    text-align: justify;
+    margin-top: 3%;
+    font-size: 1.2rem;
+}
+
+.form form {
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 43vw;
+    height: 85vh;
+    margin-right: 1em;
+    margin-top: 1em;
+    border-radius: 30px;
+}
+
+form {
+    padding: 1.5em;
+}
+
+.textsForm h1 {
+    color: #fff;
+    font-family: var(--montserrat);
+    font-weight: 400;
+}
