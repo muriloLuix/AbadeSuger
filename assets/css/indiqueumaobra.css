@@ -54,7 +54,7 @@ input {
 body {
     background-color: var(--background-color);
     overflow-x: hidden;
-    background-image: url(../img/publiqueSuaObra.png);
+    background-image: url(../img/backgroundIndiqueObra.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -244,7 +244,7 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 18vw;
+    width: 39vw;
     height: 28vh;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50px;
