@@ -11,6 +11,18 @@
     scroll-behavior: smooth;
 }
 
+select,
+textarea,
+input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+}
+
+
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -34,6 +46,7 @@
     --dark-purple: #312682;
     --purple: #513de1;
     --brand-color: #ffd200;
+    --orange-form: #E24023;
     --montserrat: "Montserrat", sans-serif;
 }
 
@@ -92,18 +105,123 @@ body {
 .form form {
     background-color: rgba(255, 255, 255, 0.3);
     width: 43vw;
-    height: 85vh;
     margin-right: 1em;
     margin-top: 1em;
     border-radius: 30px;
+    height: 84vh;
+    font-family: var(--montserrat);
 }
 
 form {
     padding: 1.5em;
 }
 
+.textsForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.textsForm .form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+}
+
 .textsForm h1 {
     color: #fff;
     font-family: var(--montserrat);
     font-weight: 400;
+}
+
+.input-group {
+    position: relative;
+    margin: 20px 0;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #fff;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .5s;
+    z-index: 1;
+}
+
+
+.input-group input.has-value+label,
+.input-group textarea.has-value+label,
+.input-group input:focus+label,
+.input-group textarea:focus+label {
+    top: -4.3%;
+    font-size: 14px;
+    background-color: var(--orange-form);
+    transform: translateY(0);
+    border-radius: 20px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 0.5em;
+    height: 6vh;
+    margin-top: 0.5em;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--montserrat);
+    background-color: transparent;
+    border: 1px solid #fff;
+    outline: none;
+    color: #fff;
+    transition: all .3s ease;
+}
+
+.input-group input:hover,
+.input-group textarea:hover {
+    border: 1px solid #000;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border: 1px solid var(--orange-form) !important;
+}
+
+.address-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.address-item {
+    flex: 1;
+}
+
+.textsForm textarea {
+    height: 167px;
+    resize: vertical;
+    max-height: 228px;
+}
+
+.textsForm button {
+    background-color: var(--orange-form);
+    color: #fff;
+    border: none;
+    padding: .5em 2em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--montserrat);
+    text-transform: uppercase;
+    border-radius: 30px;
+    width: 40%;
+    font-size: 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.textsForm p {
+    color: #fff;
+    font-family: var(--montserrat);
 }

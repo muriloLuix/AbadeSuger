@@ -9,6 +9,11 @@
     <!-- Favicon -->
     <!-- Css -->
     <link rel="stylesheet" href="../css/publicarobra.css">
+    <!-- Css -->
+    <!-- Script -->
+    <script src="../js/verificationForm.js" defer></script>
+    <script src="../js/formationFone.js" defer></script>
+    <!-- Script -->
     <title> Publique sua obra</title>
 </head>
 
@@ -31,15 +36,44 @@
                     <form action="" method="post">
                         <div class="textsForm">
                             <h1>Formulário</h1>
-                            <label for="name">Seu nome</label>
-                            <input type="text" name="name" id="name">
-                            <label for="email">E-mail</label>
-                            <input type="email" name="email" id="email">
-                            <label for="phone">Telefone</label>
-                            <input type="number" name="phone" id="phone">
+                            <div class="input-group">
+                                <input type="text" name="name" id="name" required>
+                                <label for="name">Seu nome</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" name="email" id="email" required>
+                                <label for="email">E-mail</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" name="phone" id="phone" required>
+                                <label for="phone">Telefone</label>
+                            </div>
+                            <div class="address-group">
+                                <div class="address-item input-group">
+                                    <input type="text" name="address" id="address" required>
+                                    <label for="address">Endereço</label>
+                                </div>
+                                <div class="address-item input-group">
+                                    <input type="text" name="city" id="city" required>
+                                    <label for="city">Cidade</label>
+                                </div>
+                                <div class="address-item input-group">
+                                    <input type="text" name="state" id="state" maxlength="2" required>
+                                    <label for="state">Estado</label>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <textarea name="resume" id="resume" required></textarea>
+                                <label for="resume">Breve resumo/sinopse</label>
+                            </div>
+                            <div class="form-footer">
+                                <p>Responderemos em até 30 dias.</p>
+                                <button type="submit">Enviar</button>
+                            </div>
                         </div>
                     </form>
                 </div>
+
             </div>
         </section>
     </main>
