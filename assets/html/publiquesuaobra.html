@@ -13,6 +13,8 @@
     <!-- Script -->
     <script src="../js/verificationForm.js" defer></script>
     <script src="../js/formationFone.js" defer></script>
+    <script src="../js/archive.js" defer></script>
+    <script src="../js/form.js" defer></script>
     <!-- Script -->
     <title> Publique sua obra</title>
 </head>
@@ -31,9 +33,25 @@
                         resultado, com um plano de publicação e negócios.
                     </p>
                     <p>O conteúdo será mantido em sigilo e sim, respeitamos os direitos autorais.</p>
+                    <div class="attachment">
+                        <form id="form-top" enctype="multipart/form-data">
+                            <label for="attachmentWord" id="labelWord">
+                                Anexe os originais<br>
+                                em Word<br>
+                                <span class="underline">carregue-o aqui</span>
+                            </label>
+                            <input type="file" id="attachmentWord" name="attachmentWord" accept=".doc,.docx,.txt,.pdf">
+                            <label for="attachmentImg" id="labelImg">
+                                Se tiver imagem<br>
+                                da capa da obra<br>
+                                <span class="underline">carregue-a aqui</span>
+                            </label>
+                            <input type="file" id="attachmentImg" name="attachmentImg" accept=".png,.jpg,.jpeg,.gif">
+                        </form>
+                    </div>
                 </div>
                 <div class="form">
-                    <form action="" method="post">
+                    <form id="form-bottom" action="../php/form.php" method="post" enctype="multipart/form-data">
                         <div class="textsForm">
                             <h1>Formulário</h1>
                             <div class="input-group">
@@ -68,12 +86,11 @@
                             </div>
                             <div class="form-footer">
                                 <p>Responderemos em até 30 dias.</p>
-                                <button type="submit">Enviar</button>
+                                <button type="button" id="submit-button">Enviar</button>
                             </div>
                         </div>
                     </form>
                 </div>
-
             </div>
         </section>
     </main>

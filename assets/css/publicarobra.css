@@ -203,7 +203,7 @@ form {
 .textsForm textarea {
     height: 167px;
     resize: vertical;
-    max-height: 228px;
+    max-height: 214px;
 }
 
 .textsForm button {
@@ -224,4 +224,47 @@ form {
 .textsForm p {
     color: #fff;
     font-family: var(--montserrat);
+}
+
+.attachment {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    font-family: var(--montserrat);
+}
+
+.attachment form {
+    display: flex;
+    gap: 20px;
+}
+
+.attachment label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 18vw;
+    height: 28vh;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.attachment label:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.attachment input[type="file"] {
+    display: none;
+}
+
+.underline {
+    text-decoration: underline;
+    display: block;
+    /* Ensure the text remains in place */
 }
