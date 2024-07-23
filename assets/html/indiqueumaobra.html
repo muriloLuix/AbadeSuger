@@ -12,9 +12,9 @@
     <!-- Css -->
     <!-- Script -->
     <script src="../js/verificationForm.js" defer></script>
-    <script src="../js/formationFone.js" defer></script>
+    <script src="../js/formationFoneIndique.js" defer></script>
+    <script src="../js/formIndique.js" defer></script>
     <script src="../js/archive.js" defer></script>
-    <script src="../js/form.js" defer></script>
     <!-- Script -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -41,8 +41,7 @@
                     <div class="attachment">
                         <form id="form-top" enctype="multipart/form-data">
                             <label for="attachmentWord" id="labelWord">
-                                Anexe os originais<br>
-                                em Word<br>
+                                Se tiver imagem da capa da obra<br>
                                 <span class="underline">carregue-o aqui</span>
                             </label>
                             <input type="file" id="attachmentWord" name="attachmentWord" accept=".doc,.docx,.txt,.pdf">
@@ -54,34 +53,32 @@
                         <div class="textsForm">
                             <h1>Formulário</h1>
                             <div class="input-group">
-                                <input type="text" name="name" id="name" required>
-                                <label for="name">Seu nome</label>
+                                <input type="text" name="title" id="title" required>
+                                <label for="title">Título da Obra</label>
                             </div>
                             <div class="input-group">
-                                <input type="email" name="email" id="email" required>
-                                <label for="email">E-mail</label>
+                                <input type="text" name="author" id="author" required>
+                                <label for="author">Autor(es)</label>
                             </div>
                             <div class="input-group">
-                                <input type="text" name="phone" id="phone" required>
-                                <label for="phone">Telefone</label>
+                                <input type="text" name="company" id="company" required>
+                                <label for="company">Editora</label>
                             </div>
-                            <div class="address-group">
-                                <div class="address-item input-group">
-                                    <input type="text" name="address" id="address" required>
-                                    <label for="address">Endereço</label>
-                                </div>
-                                <div class="address-item input-group">
-                                    <input type="text" name="city" id="city" required>
-                                    <label for="city">Cidade</label>
-                                </div>
-                                <div class="address-item input-group">
-                                    <input type="text" name="state" id="state" maxlength="2" required>
-                                    <label for="state">Estado</label>
-                                </div>
+                            <div class="address-item input-group">
+                                <input type="text" name="address" id="address" required>
+                                <label for="address">Endereço</label>
+                            </div>
+                            <div class="address-item input-group">
+                                <input type="text" name="city" id="city" required>
+                                <label for="city">Assunto da obra</label>
                             </div>
                             <div class="input-group">
                                 <textarea name="resume" id="resume" required></textarea>
-                                <label for="resume">Breve resumo/sinopse</label>
+                                <label for="resume">Justificar sua indicação</label>
+                            </div>
+                            <div class="address-item input-group">
+                                <input type="text" name="cellphone" id="cellphone" required>
+                                <label for="cellphone">Telefone</label>
                             </div>
                             <div class="form-footer">
                                 <p>Responderemos em até 30 dias.</p>

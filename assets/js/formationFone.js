@@ -1,3 +1,5 @@
+// Arquivo para formatar o input em (ddd) xxxxx - xxxx
+
 document.getElementById('phone').addEventListener('input', function (e) {
     let input = e.target.value;
     input = input.replace(/\D/g, '');

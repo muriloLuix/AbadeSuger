@@ -1,3 +1,5 @@
+// Configuração do Carrosel
+
 document.addEventListener("DOMContentLoaded", function () {
   const carouselSlide = document.querySelector(".carousel-slide");
   const carouselItems = document.querySelectorAll(".carousel-item");

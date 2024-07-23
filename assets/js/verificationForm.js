@@ -1,3 +1,5 @@
+// Esse arquivo está fazendo com que no input, a label não fique em cima da informação inserida pelo usuário
+
 document.addEventListener('DOMContentLoaded', () => {
     const inputs = document.querySelectorAll('.input-group input, .input-group textarea');
 
