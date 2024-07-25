@@ -4,11 +4,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* General Styles */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
 }
 
 select,
@@ -55,120 +68,6 @@ body {
   background-image: url(../img/backgroundPaginaInicial.png);
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-/* Background Styles */
-@keyframes moveBackgroundYellow {
-  0% {
-    left: 6vw;
-    top: 37vh;
-  }
-
-  50% {
-    left: 10vw;
-    top: 30vh;
-  }
-
-  100% {
-    left: 6vw;
-    top: 37vh;
-  }
-}
-
-@keyframes moveBackgroundYellow2 {
-  0% {
-    left: -13vw;
-    top: 5vh;
-  }
-
-  50% {
-    left: -10vw;
-    top: 8vh;
-  }
-
-  100% {
-    left: -13vw;
-    top: 5vh;
-  }
-}
-
-@keyframes moveBackgroundPurple {
-  0% {
-    left: 71vw;
-    top: 54vh;
-  }
-
-  50% {
-    left: 75vw;
-    top: 50vh;
-  }
-
-  100% {
-    left: 71vw;
-    top: 54vh;
-  }
-}
-
-@keyframes moveBackgroundPurple2 {
-  0% {
-    left: 57vw;
-    top: -5vh;
-  }
-
-  50% {
-    left: 60vw;
-    top: 0vh;
-  }
-
-  100% {
-    left: 57vw;
-    top: -5vh;
-  }
-}
-
-.backgroundYellow {
-  position: absolute;
-  width: 40vw;
-  height: 46vh;
-  left: 6vw;
-  top: 37vh;
-  background: var(--yellow);
-  filter: blur(5vw);
-  transform: rotate(-30deg);
-  animation: moveBackgroundYellow 10s infinite;
-}
-
-.backgroundYellow2 {
-  position: absolute;
-  width: 54vw;
-  height: 31vh;
-  left: -13vw;
-  top: 5vh;
-  background: var(--dark-yellow);
-  filter: blur(5vw);
-  animation: moveBackgroundYellow2 12s infinite;
-}
-
-.backgroundPurple {
-  position: absolute;
-  width: 28vw;
-  height: 27vh;
-  left: 71vw;
-  top: 54vh;
-  background: var(--purple);
-  filter: blur(5vw);
-  animation: moveBackgroundPurple 14s infinite;
-}
-
-.backgroundPurple2 {
-  position: absolute;
-  width: 40vw;
-  height: 40vh;
-  left: 57vw;
-  top: -5vh;
-  background: var(--dark-purple);
-  filter: blur(5vw);
-  animation: moveBackgroundPurple2 16s infinite;
 }
 
 .transparentSection {
@@ -334,177 +233,96 @@ body {
 }
 
 /* Card Style */
-
 .card-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 88vw;
-  max-width: 88vw;
-  margin: 40px auto;
-  gap: 0;
-  padding: 0 2vw;
+  text-align: center;
+  gap: 2vw;
+  height: 36vh;
+  padding: 0 10vw;
+  margin-top: 2em;
+  font-family: var(--montserrat);
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.4s ease;
+  /* Adiciona uma transição suave para todos os cards */
 }
 
 .card {
-  flex: 1;
-  min-width: 100px;
-  height: 250px;
+  width: 13vw;
+  height: 28vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
+  color: white;
+  font-size: 1.5rem;
   font-weight: bold;
-  border-radius: 10px;
-  transition: flex 0.3s, transform 0.3s, background 0.3s;
+  border-radius: 2vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.4s ease;
   position: relative;
-  overflow: hidden;
-  background: var(--bg-color);
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.3);
 }
 
-.card a {
-  text-decoration: none;
-  color: inherit;
-  z-index: 1;
+/* Estilos específicos para os cards */
+.card-1 {
+  background: url(../img/NOSSA\ INSPIRAÇÕES.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.card:hover {
-  flex: 2;
-  transform: scale(1.05);
-  background: var(--bg-color-hover);
+.card-2 {
+  background: url(../img/NOSSA\ LOJA.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.card:hover ~ .card {
-  flex: 0.8;
+.card-3 {
+  background: url(../img/AGENDA.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  transition: all 0.3s;
+.card-4 {
+  background: url(../img/QUER\ PUBLICAR_.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.vitral {
-  width: 100%;
-  height: 100%;
+.card-5 {
+  background: url(../img/NOTICIAS.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.shape1, .shape2, .shape3, .shape4, .shape5, .shape6, .shape7, .shape8, .shape9, .shape10, .shape11, .shape12, .shape13, .shape14, .shape15, .shape16, .shape17, .shape18, .shape19, .shape20, .shape21, .shape22, .shape23, .shape24, .shape25, .shape26 {
-  fill: rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s;
+.card-6 {
+  background: url(../img/INDIQUE\ UMA\ OBRA.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* Shape animations */
-.card:hover .shape1 {
-  transform: translate(10px, 10px);
+/* Efeito de desfoque para todos os cards */
+.card-container:hover .card {
+  filter: blur(0.3vw);
 }
 
-.card:hover .shape2 {
-  transform: translate(-10px, 10px);
-}
-
-.card:hover .shape3 {
-  transform: translate(0, -10px);
-}
-
-.card:hover .shape4 {
+/* Estilo para os cards ampliados */
+.card-container .card:hover {
+  width: 20vw;
   transform: scale(1.1);
+  filter: blur(0);
+  z-index: 10;
+  box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.4);
 }
 
-.card:hover .shape5 {
-  transform: scale(0.9);
-}
-
-.card:hover .shape6 {
-  transform: scale(1.2);
-}
-
-.card:hover .shape7 {
-  transform: translate(-10px, 0);
-}
-
-.card:hover .shape8 {
-  transform: translate(10px, 0);
-}
-
-.card:hover .shape9 {
-  transform: rotate(45deg);
-}
-
-.card:hover .shape10 {
-  transform: rotate(-45deg);
-}
-
-.card:hover .shape11 {
-  transform: translate(10px, -10px);
-}
-
-.card:hover .shape12 {
-  transform: translate(-10px, -10px);
-}
-
-.card:hover .shape13 {
-  transform: translate(0, 10px);
-}
-
-.card:hover .shape14 {
-  transform: translate(-10px, -10px);
-}
-
-.card:hover .shape15 {
-  transform: translate(10px, -10px);
-}
-
-.card:hover .shape16 {
-  transform: translate(-10px, 10px);
-}
-
-.card:hover .shape17 {
-  transform: translate(10px, 10px);
-}
-
-.card:hover .shape18 {
-  transform: translate(-10px, 10px);
-}
-
-.card:hover .shape19 {
-  transform: translate(10px, -10px);
-}
-
-.card:hover .shape20 {
-  transform: translate(-10px, 10px);
-}
-
-.card:hover .shape21 {
-  transform: translate(10px, -10px);
-}
-
-.card:hover .shape22 {
-  transform: translate(-10px, 10px);
-}
-
-.card:hover .shape23 {
-  transform: translate(10px, -10px);
-}
-
-.card:hover .shape24 {
-  transform: translate(-10px, 10px);
-}
-
-.card:hover .shape25 {
-  transform: translate(10px, -10px);
-}
-
-.card:hover .shape26 {
-  transform: translate(-10px, 10px);
-}
 
 
 /* Footer Style */
