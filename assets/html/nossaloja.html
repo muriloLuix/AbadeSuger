@@ -16,6 +16,7 @@
     <!-- Boostrap -->
     <!-- JavaScript -->
     <script src="assets/js/carrousel.js" defer></script>
+    <script src="assets/js/filter.js" defer></script>
     <!-- JavaScript -->
     <!-- Css -->
     <link rel="stylesheet" href="../css/loja.css">
@@ -46,16 +47,23 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Dropdown button
+                    <button class="dropdown-toggle" type="button">
+                        <span class="text">Filtrar:<br /><span class="typeOfFilter">Todos</span></span>
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4" />
+                            </svg>
+                        </span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">Todos</a></li>
+                        <li><a class="dropdown-item" href="#">Menor preço</a></li>
+                        <li><a class="dropdown-item" href="#">Maior preço</a></li>
                     </ul>
                 </div>
+
                 <div class="search-container">
                     <input type="text" name="search" id="search" placeholder="O que está buscando?">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -63,7 +71,7 @@
                         <path fill="#FFFFFF"
                             d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
                     </svg>
-                    
+
                 </div>
                 <div class="icons">
                     <div class="icon">
@@ -105,7 +113,7 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="../img/backgroundIndiqueObra.png" class="d-block w-100" alt="..." />
+                            <img src="../img/NossaLojaBanner.svg" class="d-block w-100" alt="..." />
                         </div>
                         <div class="carousel-item">
                             <img src="../img/backgroundPaginaInicial.png" class="d-block w-100" alt="..." />
