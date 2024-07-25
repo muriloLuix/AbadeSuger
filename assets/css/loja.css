@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* General Styles */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+select,
+textarea,
+input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c2bfbf;
+    opacity: 0.9;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+
+:root {
+    --background-color: #eaf5f7;
+    --text-color: #dfebed;
+    --dark-yellow: #ffa815;
+    --yellow: #ffca42;
+    --dark-purple: #312682;
+    --purple: #513de1;
+    --brand-color: #ffd200;
+    --orange-form: #E24023;
+    --montserrat: "Montserrat", sans-serif;
+}
+
+/* Body Style */
+body {
+    background-color: var(--background-color);
+    overflow-x: hidden;
+    background-image: url(../img/backgroundLojaLight.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.transparentSection {
+    width: 98%;
+    max-width: 98%;
+    height: 96vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    border-radius: 42px;
+    margin-top: 1%;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    position: relative;
+}
+
+/* Header Style */
+
+.generalHeader {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    color: #fff;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    font-family: var(--montserrat);
+}
+
+.logo img {
+    width: 3vw;
+    height: auto;
+    margin-left: 49%;
+}
+
+.delivery-info {
+    margin-left: 5%;
+}
+
+.delivery-info p {
+    margin: 0;
+    font-weight: lighter;
+    width: 100%;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    color: #fff;
+}
+
+.location svg {
+    margin-right: 0.5rem;
+}
+
+#nameCity {
+    font-weight: 300;
+}
+
+.dropdown {
+    margin-left: 2%;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+    position: relative;
+}
+
+.search-container input {
+    padding-left: 4.8rem;
+    border-radius: 4px;
+    border: 2px solid #fff;
+    height: 2rem;
+    width: 40vw;
+    height: 5vh;
+    border-radius: 28px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-container input::placeholder {
+    color: #ffffff79;
+    font-weight: lighter;
+}
+
+.search-container svg {
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1px;
+    width: 2vw;
+    height: 5vh;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+    color: #fff;
+}
+
+.icon svg {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Header Style */
+
+.carousel {
+    position: relative;
+    width: 95%;
+    max-width: 100vw;
+    height: 34vh;
+    overflow: hidden;
+    border-radius: 21px;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+.carousel-item {
+    position: relative;
+    display: none;
+    float: left;
+    width: 100%;
+    height: 42vh;
+    margin-right: -100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 25vw;
+}
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border: none;
+    margin: 0 5px;
+}
+
+.carousel-indicators button.active {
+    background-color: var(--dark-yellow);
+}
