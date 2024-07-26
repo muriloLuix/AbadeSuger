@@ -1,3 +1,5 @@
+// Esse JS faz com que o filtro escolhido pelo usuário apareça na tela na hora de selecionar
+
 document.addEventListener('DOMContentLoaded', function () {
     const dropdownToggle = document.querySelector('.dropdown-toggle');
     const dropdownMenu = document.querySelector('.dropdown-menu');
