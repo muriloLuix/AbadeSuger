@@ -65,7 +65,7 @@ input {
 body {
   background-color: var(--background-color);
   overflow-x: hidden;
-  background-image: url(../img/backgroundPaginaInicial.png);
+  background-image: url(../img/backgroundPaginaInicial.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }
