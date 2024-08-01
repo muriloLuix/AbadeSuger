@@ -584,3 +584,53 @@ footer {
     flex-basis: 100%;
   }
 }
+
+@media screen and (max-width: 425px) {
+  .navigation {
+    display: none;
+  }
+
+  .books {
+    display: none;
+  }
+
+  .logo {
+    background-color: var(--dark-purple);
+    border-radius: 50%;
+    width: 19vw;
+    height: 19vw;
+    position: relative;
+    z-index: 1;
+    top: -2vw;
+    left: 35vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logoFooter {
+    width: 8vw;
+    min-height: 50vh;
+    background-color: #ffa815;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3em 3em;
+  }
+
+  .logoFooter2:nth-child(1) {
+    padding: 3em 3em;
+  }
+
+  .form {
+    width: 76vw;
+  }
+
+  .form-group input, .form-group select, .form-group textarea{
+    max-height: 9.7vh;
+  }
+
+  .form-group select{
+    height: 6vh;
+  }
+}
