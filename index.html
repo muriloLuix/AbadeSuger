@@ -15,6 +15,7 @@
   <script src="assets/js/hoverEffect.js" defer></script>
   <script src="assets/js/carrousel.js" defer></script>
   <script src="assets/js/dropdown.js" defer></script>
+  <script src="assets/js/menu.js" defer></script>
   <!-- Scripts -->
   <!-- Favicon -->
   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
@@ -75,71 +76,32 @@
         <div class="navigation" id="nav">
           <nav>
             <ul>
-              <li>
-                <a href="#">HOME<span class="animation"></span></a>
-              </li>
-              <li>
-                <a href="#">QUEM SOMOS<span class="animation"></span></a>
-              </li>
-              <li>
-                <a href="#">PRODUTOS<span class="animation"></span></a>
-              </li>
-              <li>
-                <a href="#">AGENDA<span class="animation"></span></a>
-              </li>
-              <li>
-                <a href="assets/html/nossaloja.html">LOJA<span class="animation"></span></a>
-              </li>
-              <li>
-                <a href="#contact">CONTATO<span class="animation"></span></a>
-              </li>
+              <li><a href="#">HOME<span class="animation"></span></a></li>
+              <li><a href="#">QUEM SOMOS<span class="animation"></span></a></li>
+              <li><a href="#">PRODUTOS<span class="animation"></span></a></li>
+              <li><a href="#">AGENDA<span class="animation"></span></a></li>
+              <li><a href="assets/html/nossaloja.html">LOJA<span class="animation"></span></a></li>
+              <li><a href="#contact">CONTATO<span class="animation"></span></a></li>
             </ul>
           </nav>
         </div>
         <div class="full-screen-menu" id="fullScreenMenu">
+          <div class="logoFullScreen">
+            <img src="assets/img/LOGO.png" alt="Logo">
+          </div>
+          <div class="close-button" id="closeButton">×</div>
           <nav>
             <ul>
-              <li>
-                <a href="#">HOME<span class="animation"></span></a>
-              </li>
-              <li>
-                <a href="#">QUEM SOMOS<span class="animation"></span></a>
-              </li>
-              <li>
-                <a href="#">PRODUTOS<span class="animation"></span></a>
-              </li>
-              <li>
-                <a href="#">AGENDA<span class="animation"></span></a>
-              </li>
-              <li>
-                <a href="assets/html/nossaloja.html">LOJA<span class="animation"></span></a>
-              </li>
-              <li>
-                <a href="#contact">CONTATO<span class="animation"></span></a>
-              </li>
+              <li><a href="#">HOME<span class="animation"></span></a></li>
+              <li><a href="#">QUEM SOMOS<span class="animation"></span></a></li>
+              <li><a href="#">PRODUTOS<span class="animation"></span></a></li>
+              <li><a href="#">AGENDA<span class="animation"></span></a></li>
+              <li><a href="assets/html/nossaloja.html">LOJA<span class="animation"></span></a></li>
+              <li><a href="#contact">CONTATO<span class="animation"></span></a></li>
             </ul>
           </nav>
         </div>
       </div>
-
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const logo = document.getElementById('logo');
-          const hamburger = document.getElementById('hamburger');
-          const fullScreenMenu = document.getElementById('fullScreenMenu');
-
-          const toggleMenu = () => {
-            fullScreenMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-          };
-
-          logo.addEventListener('click', toggleMenu);
-          fullScreenMenu.addEventListener('click', toggleMenu); // Fechar menu ao clicar fora do ícone
-        });
-
-
-      </script>
-
     </header>
     <div class="card-container">
       <a href="#" class="card-link">

@@ -101,15 +101,17 @@ body {
 .logo {
   background-color: var(--dark-purple);
   border-radius: 50%;
-  width: 7vw;
-  height: 7vw;
+  width: 19vw;
+  height: 19vw;
   position: relative;
   z-index: 9999;
-  top: -1vw;
-  left: -3vw;
+  top: -2vw;
+  left: 35vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
 }
 
 .logo img {
@@ -117,21 +119,46 @@ body {
   width: 10vh;
 }
 
+.hamburger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
 .full-screen-menu {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--dark-purple);
-  z-index: 10;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: var(--purple);
+  border-radius: 50%;
+  z-index: 1;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  justify-content: center;
+  align-items: center;
 }
 
 .full-screen-menu nav {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -155,9 +182,34 @@ body {
 
 .full-screen-menu.active {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100vw;
+  height: 107vh;
+  top: 0;
+  left: 0;
+  border-radius: 0;
   opacity: 1;
+}
+
+.full-screen-menu active {
+  top: 0px;
+  left: 0px;
+  border-radius: 0px;
+  width: 101vw !important;
+  min-height: 101vh !important;
+}
+
+.full-screen-menu.active nav {
+  display: flex;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 5;
 }
 
 /* Navigation Style */
@@ -633,6 +685,9 @@ footer {
     display: none;
   }
 
+  .logo img {
+    display: none;
+  }
 
   .logo {
     background-color: var(--dark-purple);
@@ -641,43 +696,18 @@ footer {
     height: 19vw;
     position: relative;
     z-index: 1;
-    top: -2vw;
-    left: 35vw;
     display: flex;
     align-items: center;
     justify-content: center;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
   }
 
   .books {
     display: none;
-  }
-
-
-  .hamburger span:nth-child(1) {
-    transform-origin: top left;
-  }
-
-  .hamburger span:nth-child(2) {
-    opacity: 1;
-  }
-
-  .hamburger span:nth-child(3) {
-    transform-origin: bottom left;
-  }
-
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translateY(8px);
-  }
-
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
   }
 
   footer {
@@ -689,6 +719,115 @@ footer {
     z-index: -1;
   }
 
+  .generalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .full-screen-menu {
+    display: none;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-purple);
+    z-index: 1;
+    opacity: 0;
+    transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .full-screen-menu nav {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .full-screen-menu nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .full-screen-menu nav ul li {
+    margin: 10px 0;
+  }
+
+  .full-screen-menu nav ul li a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+  }
+
+  .full-screen-menu.active {
+    display: flex;
+    top: 0;
+    opacity: 1;
+  }
+
+  .full-screen-menu.active nav {
+    display: flex;
+  }
+
+  .logoFullScreen {
+    position: absolute;
+    top: 3.5vh;
+    left: 5vw;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logoFullScreen img {
+    height: 15vw;
+  }
+
+  .logoFullScreen {
+    position: absolute;
+    top: 3.5vh;
+    left: 5vw;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logoFullScreen img {
+    height: 15vw;
+  }
 
   .logoFooter {
     width: 8vw;
