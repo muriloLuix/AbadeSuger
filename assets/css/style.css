@@ -1013,6 +1013,7 @@ footer {
 
   .purpleFooter {
     text-align: center;
-  }
+    min-width: 105vw;
+}
 
 }
