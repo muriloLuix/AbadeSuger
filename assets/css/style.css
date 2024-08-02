@@ -24,6 +24,7 @@
   animation: fadeIn 1s ease-in forwards;
 }
 
+
 select,
 textarea,
 input {
@@ -858,8 +859,8 @@ footer {
   }
 
   .form {
-    width: 76vw;
-  }
+    width: 74vw;
+}
 
   .form-group select {
     height: 6vh;
