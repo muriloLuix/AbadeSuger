@@ -652,7 +652,7 @@ footer {
   margin-bottom: 2vw;
 }
 
-.credits{
+.credits {
   display: none;
 }
 
@@ -995,6 +995,7 @@ footer {
   }
 
   .credits {
+    display: flex;
     padding: 3%;
     width: 100vw;
   }
