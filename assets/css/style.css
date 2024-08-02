@@ -634,7 +634,7 @@ footer {
 .logos {
   display: flex;
   background-color: #32268a;
-  padding-left: 2.9vw;
+  padding-left: 3.9vw;
   margin-top: 4vh;
 }
 
@@ -866,30 +866,31 @@ footer {
   .form label {
     width: 51vw;
   }
+
   .card-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px; 
+    padding: 20px;
     height: auto;
-    overflow: visible; 
+    overflow: visible;
     position: relative;
   }
-  
+
   .card-link {
     display: block;
     margin: 0;
     position: relative;
   }
-  
+
   .card {
     width: 67vw !important;
     height: 25vh;
-    transition: transform 0.4s ease, z-index 0.4s ease;
+    transition: transform 0.4s ease, z-index 0.4s ease, opacity 0.4s ease;
     position: absolute;
     top: 0;
-    right: -35vw;
+    right: -36vw;
     z-index: 1;
     transform: translateY(calc(var(--index)* 10px)) translateX(calc(var(--index)* -10px)) rotate(-2deg);
     background-repeat: no-repeat;
@@ -898,66 +899,115 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-  
+    opacity: 0.7;
+  }
+
   .card-1 {
     background: url(../img/NOSSA\ INSPIRAÇÕES.svg);
   }
-  
+
   .card-2 {
     background: url(../img/NOSSA\ LOJA.svg);
   }
-  
+
   .card-3 {
     background: url(../img/AGENDA.svg);
   }
-  
+
   .card-4 {
     background: url(../img/QUER\ PUBLICAR_.svg);
   }
-  
+
   .card-5 {
     background: url(../img/NOTICIAS.svg);
   }
-  
+
   .card-6 {
     background: url(../img/INDIQUE\ UMA\ OBRA.svg);
   }
+
   .card-container .card.selected {
-    transform: scale(1.2) translateY(0) translateX(0) rotate(0);
-    z-index: 10; 
+    transform: translateY(0) translateX(0) rotate(0) scale(1.2);
+    z-index: 10;
+    opacity: 1;
   }
-  
-  
+
+
   .card-container .card:nth-child(1) {
     --index: 0;
   }
-  
+
   .card-container .card:nth-child(2) {
     --index: 1;
   }
-  
+
   .card-container .card:nth-child(3) {
     --index: 2;
   }
-  
+
   .card-container .card:nth-child(4) {
     --index: 3;
   }
-  
+
   .card-container .card:nth-child(5) {
     --index: 4;
   }
-  
+
   .card-container .card:nth-child(6) {
     --index: 5;
   }
-  
+
   .card-container:hover .card,
   .card-container .card:hover {
     filter: none;
     transform: none;
     box-shadow: none;
   }
-  
+
+  .contentFooter {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .footer-column {
+    margin: 0;
+  }
+
+  .footer-column h3 {
+    font-size: 1.4em;
+  }
+
+  .footer-column ul li a {
+    font-size: 1rem !important;
+  }
+
+  .footer-column span {
+    display: none;
+  }
+
+  .logos {
+    display: none;
+  }
+
+  .credits {
+    padding: 3%;
+    width: 100vw;
+  }
+
+  .credits p {
+    margin: 0;
+    text-align: center;
+    color: var(--dark-yellow);
+    font-family: var(--montserrat);
+  }
+
+  .credits a {
+    color: var(--dark-yellow);
+  }
+
+  .purpleFooter {
+    text-align: center;
+  }
+
 }

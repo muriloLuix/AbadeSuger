@@ -41,10 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (clicks === 2) {
                 window.location.href = link;
             } else {
-                // Atualiza o estilo do card clicado
                 cards.forEach(c => c.classList.remove('selected'));
                 card.classList.add('selected');
-                card.parentElement.parentElement.appendChild(card.parentElement);
+
+                const container = card.parentElement.parentElement;
+                container.appendChild(card.parentElement);
             }
         });
     });
