@@ -652,6 +652,10 @@ footer {
   margin-bottom: 2vw;
 }
 
+.credits{
+  display: none;
+}
+
 @media screen and (max-width: 1200px) {
   .footer-column {
     flex-basis: 45%;

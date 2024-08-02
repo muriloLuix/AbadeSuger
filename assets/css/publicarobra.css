@@ -6,22 +6,22 @@
 /* General Styles */
 @keyframes fadeIn {
     0% {
-      opacity: 0;
+        opacity: 0;
     }
-  
+
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
-  * {
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
-  }
+}
 
 select,
 textarea,
@@ -137,7 +137,7 @@ form {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1em;
+    margin-top: 1vh;
 }
 
 .textsForm h1 {
@@ -215,7 +215,7 @@ form {
 .textsForm textarea {
     height: 167px;
     resize: vertical;
-    max-height: 214px;
+    max-height: 15vh;
 }
 
 .textsForm button {
@@ -304,4 +304,74 @@ form {
     opacity: 1;
     visibility: visible;
     transform: scaleX(1);
+}
+
+@media screen and (max-width: 425px) {
+    body {
+        background-color: var(--background-color);
+        overflow-x: hidden;
+        background-image: url(../img/publiqueSuaObra.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 275vh;
+    }
+
+    .generalDiv {
+        flex-direction: column;
+    }
+
+    .texts h1 {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .texts p {
+        width: 76vw;
+    }
+
+    .transparentSection {
+        min-height: 257vh;
+    }
+
+    .attachment form {
+        flex-direction: column;
+    }
+
+    .attachment label {
+        width: 57vw;
+        height: 18vh;
+        border-radius: 75px;
+    }
+
+    .form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 82vh;
+    }
+
+    .form form {
+        min-width: 83vw;
+        max-width: 88vw;
+        margin-right: 0px;
+        min-height: 122vh;
+    }
+
+    .address-group {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .textsForm button{
+        width: 71vw;
+    }
+
+    .textsForm .form-footer{
+        flex-direction: column-reverse;
+    }
+
+    .textsForm p{
+        margin: 1em;
+        width: 66vw;
+    }
 }
