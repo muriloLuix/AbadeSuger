@@ -304,3 +304,59 @@ form {
     visibility: visible;
     transform: scaleX(1);
 }
+
+@media screen and (max-width: 425px) {
+    body {
+        min-height: 243vh;
+    }
+
+    .generalDiv {
+        flex-direction: column;
+    }
+
+    .texts h1 {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .texts p {
+        width: 76vw;
+    }
+
+    .transparentSection {
+        min-height: 229vh;
+    }
+
+    .attachment label {
+        width: 57vw;
+        height: 18vh;
+        border-radius: 75px;
+    }
+
+    .form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 82vh;
+    }
+
+    .form form {
+        min-width: 83vw;
+        max-width: 88vw;
+        margin-right: 0px;
+        min-height: 108vh;
+    }
+
+    .textsForm button{
+        width: 71vw;
+    }
+
+    .textsForm .form-footer{
+        flex-direction: column-reverse;
+    }
+
+    .textsForm p{
+        margin: 1em;
+        width: 66vw;
+    }
+}
