@@ -699,7 +699,7 @@ footer {
     z-index: 9999;
     position: fixed;
     height: 6vh;
-    width: 10vw;
+    width: 6vh;
     border-radius: 10px;
     display: flex;
     justify-content: center;
