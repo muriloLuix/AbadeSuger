@@ -2,7 +2,8 @@
 
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 /* General Styles */
 
 @keyframes fadeIn {
@@ -657,6 +658,11 @@ footer {
   display: none;
 }
 
+.dropdown,
+.orange{
+  display: none;
+}
+
 @media screen and (max-width: 1200px) {
   .footer-column {
     flex-basis: 45%;
@@ -678,9 +684,68 @@ footer {
 }
 
 @media screen and (max-width: 425px) {
-  body{
+  body {
     width: 100vw;
+    margin: 0;
+    padding: 0;
   }
+
+  .transparentSection{
+    height: 40vh;
+  }
+
+  .orange {
+    background-color: #FF8F00;
+    z-index: 9999;
+    position: fixed;
+    height: 6vh;
+    width: 10vw;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .orange img {
+    max-width: 70%;
+    max-height: 100%;
+  }
+
+  .dropdown {
+    position: fixed;
+    top: .5vh;
+    left: 3.2vw;
+    width: 8vh;
+    background-color: #161616;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 9998;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border-radius: 15px;
+  }
+
+  .dropdown-item {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .dropdown-item img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .dropdown.open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    padding-top: 7vh;
+}
 
   .navigation {
     display: none;
@@ -691,20 +756,7 @@ footer {
   }
 
   .logo {
-    background-color: var(--dark-purple);
-    border-radius: 50%;
-    width: 19vw;
-    height: 19vw;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;
-    transition: transform 0.5s ease-in-out;
+    display: none;
   }
 
   .books {
@@ -713,10 +765,6 @@ footer {
 
   footer {
     position: relative;
-    z-index: -1;
-  }
-
-  .card-container {
     z-index: -1;
   }
 
@@ -730,113 +778,6 @@ footer {
     left: 0;
     width: 100%;
     z-index: 2;
-  }
-
-  .hamburger {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 25px;
-    height: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    z-index: 3;
-  }
-
-  .hamburger span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .full-screen-menu {
-    display: none;
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--dark-purple);
-    z-index: 1;
-    opacity: 0;
-    transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .full-screen-menu nav {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-
-  .full-screen-menu nav ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  .full-screen-menu nav ul li {
-    margin: 10px 0;
-  }
-
-  .full-screen-menu nav ul li a {
-    color: white;
-    font-size: 24px;
-    text-decoration: none;
-    letter-spacing: 5px;
-    padding: 6%;
-    display: block;
-    width: 62vw;
-    transition: all .3s ease;
-  }
-
-  .full-screen-menu nav ul li a:active {
-    transform: scale(0.5);
-  }
-
-  .full-screen-menu.active {
-    display: flex;
-    top: 0;
-    opacity: 1;
-  }
-
-  .full-screen-menu.active nav {
-    display: flex;
-  }
-
-  .logoFullScreen {
-    position: absolute;
-    top: 3.5vh;
-    left: 5vw;
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .logoFullScreen img {
-    height: 15vw;
-  }
-
-  .logoFullScreen {
-    position: absolute;
-    top: 3.5vh;
-    left: 5vw;
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .logoFullScreen img {
-    height: 15vw;
   }
 
   .logoFooter img {
@@ -860,7 +801,7 @@ footer {
 
   .form {
     width: 74vw;
-}
+  }
 
   .form-group select {
     height: 6vh;
@@ -877,14 +818,7 @@ footer {
   }
 
   .card-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    height: auto;
-    overflow: visible;
-    position: relative;
+    display: none;
   }
 
   .card-link {
@@ -935,44 +869,6 @@ footer {
     background: url(../img/INDIQUE\ UMA\ OBRA.svg);
   }
 
-  .card-container .card.selected {
-    transform: translateY(0) translateX(0) rotate(0) scale(1.2);
-    z-index: 10;
-    opacity: 1;
-  }
-
-
-  .card-container .card:nth-child(1) {
-    --index: 0;
-  }
-
-  .card-container .card:nth-child(2) {
-    --index: 1;
-  }
-
-  .card-container .card:nth-child(3) {
-    --index: 2;
-  }
-
-  .card-container .card:nth-child(4) {
-    --index: 3;
-  }
-
-  .card-container .card:nth-child(5) {
-    --index: 4;
-  }
-
-  .card-container .card:nth-child(6) {
-    --index: 5;
-  }
-
-  .card-container:hover .card,
-  .card-container .card:hover {
-    filter: none;
-    transform: none;
-    box-shadow: none;
-  }
-
   .contentFooter {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1019,6 +915,6 @@ footer {
   .purpleFooter {
     text-align: center;
     min-width: 100vw;
-}
+  }
 
 }

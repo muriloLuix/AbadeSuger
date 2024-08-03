@@ -73,6 +73,7 @@ body {
     background-image: url(../img/backgroundLojaLight.svg);
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 135vh;
 }
 
 .transparentSection {
@@ -194,9 +195,7 @@ body {
 .blink {
     animation: blink 0.5s ease-in-out;
     border-radius: 3px;
-    /* Opcional, para bordas arredondadas */
     padding: 2px 4px;
-    /* Opcional, para adicionar algum espaço ao redor do texto */
 }
 
 .icons {
@@ -458,4 +457,128 @@ body {
 
 .buy-button:hover {
     background-color: #484183;
+}
+
+.menu-hamburger {
+    display: none;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+    position: absolute;
+    width: 7.7vw;
+}
+
+.hamburger::before {
+    transform: translateY(-8px);
+}
+
+.hamburger::after {
+    transform: translateY(8px);
+}
+
+.menu-toggle.active .hamburger {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active .hamburger::before {
+    transform: rotate(90deg);
+}
+
+.menu-toggle.active .hamburger::after {
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-overlay.active {
+    display: flex;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-items .icon {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.menu-items .icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.menu-items .icon span {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 425px) {
+
+    .transparentSection {
+        min-width: 98vw;
+        width: 129vw;
+        min-height: 129vh;
+    }
+
+    .carousel {
+        width: 100vw;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .menu-hamburger {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .cardContainer {
+        position: relative;
+        z-index: -1;
+    }
+
+    .menu-toggle {
+
+        position: relative;
+        z-index: 1001;
+    }
 }
