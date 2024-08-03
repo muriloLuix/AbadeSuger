@@ -698,8 +698,8 @@ footer {
     background-color: #FF8F00;
     z-index: 9999;
     position: fixed;
-    height: 6vh;
-    width: 6vh;
+    height: 7vh;
+    width: 7vh;
     border-radius: 10px;
     display: flex;
     justify-content: center;
