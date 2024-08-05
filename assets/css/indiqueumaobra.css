@@ -107,7 +107,7 @@ body {
 .texts p {
     color: #fff;
     font-family: var(--montserrat);
-    width: 78%;
+    width: 43vw;
     text-align: justify;
     margin-top: 3%;
     font-size: 1.2rem;
@@ -115,7 +115,8 @@ body {
 
 .form form {
     background-color: rgba(255, 255, 255, 0.3);
-    width: 43vw;
+    width: 39vw;
+    max-width: 39vw;
     margin-right: 1em;
     margin-top: 1em;
     border-radius: 30px;
@@ -305,6 +306,11 @@ form {
     transform: scaleX(1);
 }
 
+.dropdown,
+.orange {
+    display: none;
+}
+
 @media screen and (max-width: 425px) {
     body {
         min-height: 243vh;
@@ -347,16 +353,72 @@ form {
         min-height: 108vh;
     }
 
-    .textsForm button{
+    .textsForm button {
         width: 71vw;
     }
 
-    .textsForm .form-footer{
+    .textsForm .form-footer {
         flex-direction: column-reverse;
     }
 
-    .textsForm p{
+    .textsForm p {
         margin: 1em;
         width: 66vw;
+    }
+
+    /* Menu Celular */
+
+
+    .orange {
+        background-color: #FF8F00;
+        z-index: 9999;
+        position: fixed;
+        height: 7vh;
+        width: 7vh;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .orange img {
+        max-width: 70%;
+        max-height: 100%;
+    }
+
+    .dropdown {
+        position: fixed;
+        top: .5vh;
+        left: 3.2vw;
+        width: 16.8vw;
+        background-color: #161616;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        z-index: 9998;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        border-radius: 15px;
+    }
+
+    .dropdown-item {
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .dropdown-item img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .dropdown.open {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+        padding-top: 7vh;
     }
 }

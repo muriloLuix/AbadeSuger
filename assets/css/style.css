@@ -694,6 +694,8 @@ footer {
     height: 40vh;
   }
 
+  /* Menu Celular */
+
   .orange {
     background-color: #FF8F00;
     z-index: 9999;
@@ -716,7 +718,7 @@ footer {
     position: fixed;
     top: .5vh;
     left: 3.2vw;
-    width: 15.2vw;
+    width: 16.8vw;
     background-color: #161616;
     display: none;
     flex-direction: column;
@@ -746,6 +748,8 @@ footer {
     transform: translateY(0);
     padding-top: 7vh;
   }
+
+  /* Menu Celular End */
 
   .navigation {
     display: none;
