@@ -92,7 +92,7 @@ body {
 }
 
 .texts {
-    padding: 2em;
+    padding: 1em;
 }
 
 .texts h1 {
@@ -144,6 +144,8 @@ form {
     color: #fff;
     font-family: var(--montserrat);
     font-weight: 400;
+    font-size: 2em;
+    margin: 0.40em 0px !important;
 }
 
 .input-group {
@@ -213,9 +215,9 @@ form {
 }
 
 .textsForm textarea {
-    height: 167px;
+    height: 6vh;
     resize: vertical;
-    max-height: 184px;
+    max-height: 6vh;
 }
 
 .textsForm button {
@@ -257,7 +259,8 @@ form {
     justify-content: center;
     align-items: center;
     width: 40vw;
-    height: 39vh;
+    height: 21vh;
+    max-height: 21vh;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50px;
     color: white;
