@@ -107,18 +107,23 @@ body {
 .texts p {
     color: #fff;
     font-family: var(--montserrat);
-    width: 43vw;
+    width: 38vw;
+    height: 15vh;
     text-align: justify;
     margin-top: 3%;
     font-size: 1.2rem;
 }
 
+.aboutForm {
+    height: 4vh !important;
+}
+
 .form form {
     background-color: rgba(255, 255, 255, 0.3);
-    width: 39vw;
-    max-width: 39vw;
-    margin-right: 1em;
-    margin-top: 1em;
+    width: 38vw;
+    max-width: 38vw;
+    margin-left: 7vw;
+    margin-top: 2vh;
     border-radius: 30px;
     height: 84vh;
     font-family: var(--montserrat);
@@ -259,8 +264,8 @@ form {
     justify-content: center;
     align-items: center;
     width: 40vw;
-    height: 21vh;
-    max-height: 21vh;
+    height: 37vh;
+    max-height: 37vh;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50px;
     color: white;
