@@ -335,6 +335,7 @@ form {
 
     .texts p {
         width: 76vw;
+        min-height: 64vh;
     }
 
     .transparentSection {
@@ -357,7 +358,7 @@ form {
     .form form {
         min-width: 83vw;
         max-width: 88vw;
-        margin-right: 0px;
+        margin: 0px;
         min-height: 108vh;
     }
 
