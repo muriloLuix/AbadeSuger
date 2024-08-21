@@ -68,7 +68,7 @@ body {
     overflow-x: hidden;
     background-image: url(../img/imagemBackgroundRegister.svg);
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     min-height: 100vh;
     font-family: var(--montserrat);
 }
@@ -293,6 +293,8 @@ form {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
+
+
 .toggle-password {
     cursor: pointer;
     font-size: 18px;
@@ -333,29 +335,110 @@ button:hover {
     margin-top: 12vh;
 }
 
+.input-container select {
+    width: 86%;
+    padding: 2vh;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 16px;
+    color: #aaa;
+    background-color: transparent;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    /* Remove o estilo padrão do select */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-container select:focus {
+    border-color: #6C1FD3;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+.input-container::after {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #007bff;
+    font-size: 16px;
+}
+
+.input-container select option {
+    padding: 12px 15px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: rgb(134, 133, 133);
+    border: none;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.input-container select option:hover {
+    background-color: #f0f0f0;
+}
+
+.input-container select option:checked {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.input-container select::-ms-expand {
+    display: none;
+}
+
+.input-container .hidden-label {
+    display: none;
+}
+
+.after .input-container input {
+    width: 86%;
+    padding: 2vh;
+    margin: 0 auto;
+}
+
+.after .input-container label {
+    left: 2vw;
+}
+
+.after .input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.after .input-container {
+    flex: 1;
+}
+
+.after button {
+    width: 28vw;
+    margin: 3vh auto;
+}
+
+
+
 @media screen and (max-width: 425px) {
 
-    /* Disabled */
     .logoAbadeSuger {
         display: none;
     }
 
     .backToMain {
-        display: none;
+        width: 70vw;
     }
 
-    /* Disabled */
-
-    /* Header Style */
-
-    /* Header Style */
-
-    /* Main Style */
-
+    .logoAbade {
+        width: 12vw;
+    }
 
     .container {
         justify-content: center;
         width: 100vw;
+        height: 65vh;
     }
 
     .blackTransparent {
@@ -383,6 +466,15 @@ button:hover {
     .toggle-password {
         right: 3vw;
         top: 3.5vh;
+    }
+
+    .after .input-container label {
+        left: 5vw;
+    }
+
+    .after button {
+        min-width: 78vw;
+        margin: 3vh auto;
     }
 
     /* Main Style */

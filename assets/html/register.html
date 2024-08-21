@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
     <!-- Scripts -->
     <script src="../js/seePassword.js" defer></script>
+    <script src="../js/switchPage.js" defer></script>
     <!-- Scripts -->
     <!-- BootStrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -28,12 +29,12 @@
 
     <main>
         <div class="container">
-            <div class="blackTransparent">
+            <div class="blackTransparent" id="blackTransparent">
                 <div class="form-container">
                     <h1>CRIE UMA CONTA</h1>
                     <p>Seja bem vindo!</p>
                     <div class="social-icons">
-                        <a href="#"><img src="../img/iconesCadastro/google.svg" alt="Google"></a>
+                        <a href="#" id="login-google"><img src="../img/iconesCadastro/google.svg" alt="Google"></a>
                         <a href="#"><img src="../img/iconesCadastro/Vector.svg" alt="Apple"></a>
                         <a href="#"><img src="../img/iconesCadastro/Facebook.svg" alt="Facebook"></a>
                         <a href="#"><img src="../img/iconesCadastro/microsoft.svg" alt="Microsoft"></a>
@@ -41,7 +42,7 @@
                     <div class="divider">
                         <span>ou</span>
                     </div>
-                    <form>
+                    <form id="login-form">
                         <div class="input-container">
                             <input type="email" id="email" placeholder=" " required>
                             <label for="email">Seu E-mail</label>
@@ -57,6 +58,55 @@
                 </div>
                 <div class="step-indicator">Etapa 1 de 2</div>
             </div>
+
+            <div class="blackTransparent after" id="blackTransparentAfter" style="display:none;">
+                <div class="form-container">
+                    <h1>CRIE UMA CONTA</h1>
+                    <p>Seja bem vindo!</p>
+                </div>
+                <form id="login-form">
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="name" id="name" placeholder=" " required>
+                            <label for="name">Nome</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="sobrenome" id="sobrenome" placeholder=" " required>
+                            <label for="sobrenome">Sobrenome</label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-container">
+                            <select name="month" id="month">
+                                <option value="" selected disabled></option>
+                                <option value="janeiro">Janeiro</option>
+                                <option value="fevereiro">Fevereiro</option>
+                                <option value="marco">Março</option>
+                                <option value="abril">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="junho">Junho</option>
+                                <option value="julho">Julho</option>
+                                <option value="agosto">Agosto</option>
+                                <option value="setembro">Setembro</option>
+                                <option value="outubro">Outubro</option>
+                                <option value="novembro">Novembro</option>
+                                <option value="dezembro">Dezembro</option>
+                            </select>
+                            <label for="month">Mês</label>
+                        </div>
+
+                        <div class="input-container">
+                            <input type="text" id="year" placeholder=" " required maxlength="4"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                            <label for="year">Ano (aaaa)</label>
+                        </div>
+                    </div>
+                    <button type="submit">Criar Conta</button>
+                </form>
+                <div class="step-indicator">Etapa 2 de 2</div>
+            </div>
+
+
             <div class="logoAbadeSuger">
                 <img src="../img/iconesCadastro/LogoAbadeSuger.svg" alt="">
             </div>
