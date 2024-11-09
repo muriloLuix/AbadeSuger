@@ -4,17 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/register.css">
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
-    <!-- Scripts -->
-    <script src="../js/seePassword.js" defer></script>
-    <script src="../js/switchPage.js" defer></script>
-    <!-- Scripts -->
-    <!-- BootStrap Icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- BootStrap Icon -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <title> | Realize seu cadastro</title>
+    <!-- Bootstrap -->
+    <!-- Css -->
+    <link rel="stylesheet" href="../css/register.css">
+    <!-- Css -->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <!-- Favicon -->
+    <!-- JavaScript -->
+    <script src="../js/index.js" type="module" defer></script>
+    <script src="../js/cep.js" defer></script>
+    <script src="../js/seePassword.js" defer></script>
+    <!-- JavaScript -->
+    <title>| Faça seu cadastro</title>
 </head>
 
 <body>
@@ -31,9 +36,9 @@
         <div class="container">
             <div class="blackTransparent" id="blackTransparent">
                 <div class="form-container">
-                    <h1>CRIE UMA CONTA</h1>
+                    <h1>REALIZE SEU CADASTRO</h1>
                     <p>Seja bem vindo!</p>
-                    <div class="social-icons">
+                    <!-- <div class="social-icons">
                         <a href="#" id="login-google"><img src="../img/iconesCadastro/google.svg" alt="Google"></a>
                         <a href="#"><img src="../img/iconesCadastro/Vector.svg" alt="Apple"></a>
                         <a href="#"><img src="../img/iconesCadastro/Facebook.svg" alt="Facebook"></a>
@@ -41,74 +46,71 @@
                     </div>
                     <div class="divider">
                         <span>ou</span>
-                    </div>
+                    </div> -->
                     <form id="login-form">
-                        <div class="input-container">
-                            <input type="email" id="email" placeholder=" " required>
-                            <label for="email">Seu E-mail</label>
+                        <div class="form-grid">
+                            <div class="input-container">
+                                <input type="text" id="cli_nome" name="cli_nome" placeholder=" " required>
+                                <label for="cli_nome">Nome</label>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="cli_sobrenome" name="cli_sobrenome" placeholder=" " required>
+                                <label for="cli_sobrenome">Sobrenome</label>
+                            </div>
+                            <div class="input-container">
+                                <input type="tel" id="cli_telefone" name="cli_telefone" placeholder=" " required
+                                    oninput="mascaraTelefone(this)" maxlength="15">
+                                <label for="cli_telefone">Telefone</label>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="cli_dtnasc" name="cli_dtnasc" placeholder=" " required
+                                    maxlength="10">
+                                <label for="cli_dtnasc">Data de nascimento</label>
+                            </div>
+                            <div class="input-container">
+                                <input type="email" id="cli_email" name="cli_email" placeholder=" " required>
+                                <label for="cli_email">E-mail</label>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="cli_cep" name="cli_cep" placeholder=" " required maxlength="9"
+                                    oninput="mascaraCEP(this)" onblur="buscarEndereco()">
+                                <label for="cli_cep">Cep</label>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="cli_rua" name="cli_rua" placeholder=" " required>
+                                <label for="cli_rua">Rua</label>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="cli_bairro" name="cli_bairro" placeholder=" " required>
+                                <label for="cli_bairro">Bairro</label>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="cli_cidade" name="cli_cidade" placeholder=" " required>
+                                <label for="cli_cidade">Cidade</label>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="cli_estado" name="cli_estado" placeholder=" " required>
+                                <label for="cli_estado">Estado</label>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="cli_numero" name="cli_numero" placeholder=" " required>
+                                <label for="cli_numero">Número</label>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" id="cli_complemento" name="cli_complemento" placeholder=" ">
+                                <label for="cli_complemento">Complemento</label>
+                            </div>
                         </div>
                         <div class="input-container password-container">
-                            <input type="password" id="password" placeholder=" " required>
-                            <label for="password">Sua Senha</label>
-                            <span class="toggle-password"><i class="bi bi-eye-fill" onclick="showPassword()"
-                                    id="btnPassword"></i></span>
+                            <input type="password" id="cli_senha" name="cli_senha" placeholder=" " required>
+                            <label for="cli_senha">Sua Senha</label>
+                            <span class="toggle-password">
+                                <i class="bi bi-eye-fill" onclick="showPassword()" id="btnPassword"></i>
+                            </span>
                         </div>
-                        <button type="submit">Continuar</button>
+                        <button type="submit">CRIAR CADASTRO</button>
                     </form>
                 </div>
-                <div class="step-indicator">Etapa 1 de 2</div>
-            </div>
-
-            <div class="blackTransparent after" id="blackTransparentAfter" style="display:none;">
-                <div class="form-container">
-                    <h1>CRIE UMA CONTA</h1>
-                    <p>Seja bem vindo!</p>
-                </div>
-                <form id="login-form">
-                    <div class="input-group">
-                        <div class="input-container">
-                            <input type="name" id="name" placeholder=" " required>
-                            <label for="name">Nome</label>
-                        </div>
-                        <div class="input-container">
-                            <input type="sobrenome" id="sobrenome" placeholder=" " required>
-                            <label for="sobrenome">Sobrenome</label>
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <div class="input-container">
-                            <select name="month" id="month">
-                                <option value="" selected disabled></option>
-                                <option value="janeiro">Janeiro</option>
-                                <option value="fevereiro">Fevereiro</option>
-                                <option value="marco">Março</option>
-                                <option value="abril">Abril</option>
-                                <option value="maio">Maio</option>
-                                <option value="junho">Junho</option>
-                                <option value="julho">Julho</option>
-                                <option value="agosto">Agosto</option>
-                                <option value="setembro">Setembro</option>
-                                <option value="outubro">Outubro</option>
-                                <option value="novembro">Novembro</option>
-                                <option value="dezembro">Dezembro</option>
-                            </select>
-                            <label for="month">Mês</label>
-                        </div>
-
-                        <div class="input-container">
-                            <input type="text" id="year" placeholder=" " required maxlength="4"
-                                oninput="this.value = this.value.replace(/[^0-9]/g, '');">
-                            <label for="year">Ano (aaaa)</label>
-                        </div>
-                    </div>
-                    <button type="submit">Criar Conta</button>
-                </form>
-                <div class="step-indicator">Etapa 2 de 2</div>
-            </div>
-
-
-            <div class="logoAbadeSuger">
-                <img src="../img/iconesCadastro/LogoAbadeSuger.svg" alt="">
             </div>
         </div>
     </main>
