@@ -63,7 +63,8 @@ input {
     --montserrat: "Montserrat", sans-serif;
 }
 
-body {
+body,
+html {
     background-color: var(--background-color);
     overflow-x: hidden;
     background-image: url(../img/imagemBackgroundRegister.svg);
@@ -89,14 +90,14 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #FF8F00;
-    width: 3vw;
-    height: 6vh;
+    width: 4em;
+    height: 4em;
     border-radius: 10px;
 }
 
 .logoAbade img {
-    width: 5vw;
-    height: 5vh;
+    width: 3em;
+    height: 3em;
 }
 
 .text p {
@@ -122,7 +123,6 @@ body {
     backdrop-filter: blur(10px);
     margin: 0vh 7vw;
     border-radius: 42px;
-    margin-top: 4vh;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
     position: relative;
     -webkit-backdrop-filter: blur(10px);
@@ -159,6 +159,28 @@ body {
     justify-content: left;
     gap: 15px;
     margin-bottom: 2vh;
+}
+
+
+@media screen and (max-width: 1559px) {
+    .logoAbade {
+        width: 11em !important;
+    }
+
+    .blackTransparent {
+        width: 79vw;
+        max-width: 76vw;
+        min-height: 46vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        margin: 0vh 7vw;
+        border-radius: 42px;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        position: relative;
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .form-container h1
 }
 
 .social-icons a {
@@ -217,13 +239,13 @@ body {
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 8px;
 }
 
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 8px;
 }
 
 .input-container {
@@ -316,21 +338,38 @@ button:hover {
 }
 
 .input-container select {
-    width: 86%;
-    padding: 2vh;
-    margin: 0 auto;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    background-color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 13px;
+    border: none;
     font-size: 16px;
-    color: #aaa;
+    color: #fff;
     background-color: transparent;
-    transition: border-color 0.3s, box-shadow 0.3s;
     outline: none;
-    cursor: pointer;
+    border: 1px solid #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px;
     appearance: none;
-    /* Remove o estilo padrão do select */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-container:has(select option:checked:not([value=""])) label {
+    top: 7px;
+    font-size: 12px;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 0 5px;
+}
+
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    background-color: transparent;
 }
 
 .input-container select:focus {
@@ -400,7 +439,6 @@ button:hover {
 }
 
 
-
 @media screen and (max-width: 425px) {
 
     .logoAbadeSuger {
@@ -411,19 +449,11 @@ button:hover {
         width: 70vw;
     }
 
-    .logoAbade {
-        width: 12vw;
-    }
 
     .container {
         justify-content: center;
         width: 100vw;
         height: 65vh;
-    }
-
-    .blackTransparent {
-        width: 86vw;
-        max-width: 87vw;
     }
 
     .form-container h1 {
@@ -461,4 +491,68 @@ button:hover {
 }
 
 
-@media screen and (min-width: 1069) {}
+/* Modal de Sucesso */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 41vw;
+    height: 19vh;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #28a745;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.modal .btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.modal .btn:hover {
+    background-color: #218838;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -18,6 +18,7 @@
     <script src="../js/index.js" type="module" defer></script>
     <script src="../js/cep.js" defer></script>
     <script src="../js/seePassword.js" defer></script>
+    <script src="../js/modal.js" defer></script>
     <!-- JavaScript -->
     <title>| Faça seu cadastro</title>
 </head>
@@ -47,7 +48,7 @@
                     <div class="divider">
                         <span>ou</span>
                     </div> -->
-                    <form id="login-form">
+                    <form id="login-form" method="post" action="../php/cadastrar_cliente.php">
                         <div class="form-grid">
                             <div class="input-container">
                                 <input type="text" id="cli_nome" name="cli_nome" placeholder=" " required>
@@ -102,6 +103,21 @@
                             </div>
                         </div>
                         <div class="input-container password-container">
+                            <input type="text" id="cli_cpf" name="cli_cpf" placeholder=" " required
+                                oninput="mascaraCPF(this)" maxlength="14">
+                            <label for="cli_cpf">Cpf</label>
+                        </div>
+                        <div class="input-container password-container">
+                            <select name="gen_id" id="gen_id" required>
+                                <option value="" selected disabled></option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Feminino</option>
+                                <option value="3">Prefiro não dizer</option>
+                                <option value="4">Outro</option>
+                            </select>
+                            <label for="gen_id">Gênero</label>
+                        </div>
+                        <div class="input-container password-container">
                             <input type="password" id="cli_senha" name="cli_senha" placeholder=" " required>
                             <label for="cli_senha">Sua Senha</label>
                             <span class="toggle-password">
@@ -114,6 +130,14 @@
             </div>
         </div>
     </main>
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Cadastro realizado com sucesso!</h2>
+            <p>Seu cadastro foi concluído com sucesso. Agora você pode fazer login.</p>
+            <a href="../html/login.html" class="btn">Ir para login</a>
+        </div>
+    </div>
 
 </body>
 

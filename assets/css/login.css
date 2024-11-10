@@ -69,7 +69,6 @@ body {
     background-image: url(../img/imagemBackgroundRegister.svg);
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     font-family: var(--montserrat);
 }
 
@@ -480,5 +479,20 @@ button:hover {
     /* Main Style */
 }
 
+.register-link {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 300;
+}
 
-@media screen and (min-width: 1069) {}
+.register-link a {
+    color: #ff8f00 !important;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.register-link a:hover {
+    color: #e65c00;
+}
