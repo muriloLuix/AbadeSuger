@@ -335,7 +335,6 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 2vw;
   height: 36vh;
   padding: 0 10vw;
   margin-top: 2em;
@@ -355,17 +354,14 @@ body {
   width: 13vw;
   height: 28vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
-  border-radius: 2vw;
   background-repeat: no-repeat;
   background-size: cover;
   transition: all 0.4s ease;
   position: relative;
-  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.3);
 }
 
 .card-1 {
@@ -373,6 +369,49 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.card-1 span {
+  background: linear-gradient(to right, #8969B2, #243043);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.card-2 span {
+  background: linear-gradient(to right, #72083D, #3E30AB);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.card-3 span {
+  background: linear-gradient(to right, #312682, #2C17CA);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.card-4 span {
+  background: linear-gradient(to right, #9C1334, #F7BF01);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.card-5 span {
+  background: linear-gradient(to right, #9C1334, #F7BF01);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.card-6 span {
+  background: linear-gradient(to right, #9C1334, #F7BF01);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
 
 .card-2 {
   background: url(../img/NOSSA\ LOJA.svg);
@@ -683,7 +722,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 597px) {
   body {
     width: 100vw;
     margin: 0;

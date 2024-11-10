@@ -71,6 +71,12 @@ body {
     background-size: cover;
 }
 
+@media screen and (max-width: 1180px) {
+    body{
+        min-height: 60em;
+    }
+}
+
 /* Main Style */
 
 .transparentSection {
@@ -334,7 +340,7 @@ form {
     display: none;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 597px) {
     body {
         min-height: 243vh;
     }
@@ -345,7 +351,7 @@ form {
 
     .texts h1 {
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 
     .texts p {
@@ -404,6 +410,7 @@ form {
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        left: 4.9vw;
     }
 
     .orange img {

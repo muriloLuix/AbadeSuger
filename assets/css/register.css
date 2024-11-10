@@ -73,6 +73,12 @@ html {
     font-family: var(--montserrat);
 }
 
+@media screen and (max-width: 1559px) {
+    body {
+        min-height: 75em;
+    }
+}
+
 /* Return Style */
 
 .backToMain {
@@ -141,7 +147,6 @@ html {
     font-style: italic;
     color: #fff;
     text-align: left;
-    width: 29vw;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -161,10 +166,21 @@ html {
     margin-bottom: 2vh;
 }
 
+@media screen and (max-width: 1180px) {
+    .form-container h1 {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 932px) {
+    .form-container h1 {
+        font-size: 1.3rem;
+    }
+}
 
 @media screen and (max-width: 1559px) {
     .logoAbade {
-        width: 11em !important;
+        width: 6em !important;
     }
 
     .blackTransparent {
@@ -180,7 +196,13 @@ html {
         -webkit-backdrop-filter: blur(10px);
     }
 
-    .form-container h1
+    .backToMain {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100vw;
+    }
+
 }
 
 .social-icons a {
@@ -555,4 +577,66 @@ button:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media screen and (max-width: 407px) {
+
+    .blackTransparent {
+        width: 90vw;
+        max-width: 90vw;
+        min-height: 70vh;
+        margin-top: 54em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        /* Empilhar os campos em telas menores */
+        gap: 12px;
+    }
+
+    .form-container h1 {
+        font-size: 1.7rem;
+    }
+
+    .backToMain {
+        width: 100%;
+        /* Expandir para ocupar a tela inteira */
+        text-align: center;
+    }
+
+    .logoAbade {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logoAbade img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .text p {
+        font-size: 12px;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media screen and (max-width: 430px) {
+    .form-container h1 {
+        font-size: 1.3rem;
+        /* Tamanho menor para cabeçalho */
+    }
+
+    .input-container input,
+    .input-container select {
+        padding: 12px;
+        /* Maior área de toque para inputs */
+    }
+
+    button {
+        font-size: 1.3rem;
+        /* Botão um pouco menor */
+        padding: 12px;
+    }
 }

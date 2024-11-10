@@ -69,6 +69,7 @@ body {
     background-image: url(../img/publiqueSuaObra.svg);
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 61em;
 }
 
 /* Main Style */
@@ -306,7 +307,7 @@ form {
     transform: scaleX(1);
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 597px) {
     body {
         background-color: var(--background-color);
         overflow-x: hidden;
