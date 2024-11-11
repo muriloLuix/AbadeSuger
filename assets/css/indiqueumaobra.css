@@ -65,15 +65,21 @@ input {
 /* Body Style */
 body {
     background-color: var(--background-color);
-    overflow-x: hidden;
+    overflow: hidden;
     background-image: url(../img/backgroundIndiqueObra.svg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+@media screen and (min-width: 1180px) {
+    body {
+        min-height: 94em;
+    }
+}
+
 @media screen and (max-width: 1180px) {
-    body{
-        min-height: 60em;
+    body {
+        min-height: 94em;
     }
 }
 
@@ -106,7 +112,7 @@ body {
     text-transform: uppercase;
     font-family: var(--montserrat);
     font-weight: 500;
-    font-size: 4rem;
+    font-size: clamp(1.5rem, 2.5vw, 4rem);
     letter-spacing: 3px;
     white-space: nowrap;
 }
@@ -118,19 +124,26 @@ body {
     min-height: 15vh;
     text-align: justify;
     margin-top: 3%;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 
 .aboutForm {
     height: 4vh !important;
 }
 
+@media screen and (max-width: 1552px) {
+    .textsForm .form-footer {
+        gap: 2vw;
+        flex-direction: column;
+    }
+
+}
+
 .form form {
     background-color: rgba(255, 255, 255, 0.3);
     width: 32vw;
-    max-width: 32vw;
-    margin-left: 7vw;
-    margin-top: 2vh;
+    max-width: 80vw;
+    margin: 2vh auto;
     border-radius: 30px;
     height: 84vh;
     font-family: var(--montserrat);
@@ -340,13 +353,22 @@ form {
     display: none;
 }
 
-@media screen and (max-width: 597px) {
+@media screen and (max-width: 1024px) {
     body {
-        min-height: 243vh;
+        min-height: 122vh;
+        overflow: auto !important;
+    }
+
+    .attachment form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
     }
 
     .generalDiv {
         flex-direction: column;
+        gap: 2em;
     }
 
     .texts h1 {
@@ -356,16 +378,18 @@ form {
 
     .texts p {
         width: 76vw;
-        min-height: 64vh;
+        min-height: 21vh;
     }
 
     .transparentSection {
-        min-height: 229vh;
+        min-height: 116vh;
     }
 
+
     .attachment label {
-        width: 57vw;
-        height: 18vh;
+        width: 80%;
+        max-width: 60vw;
+        height: auto;
         border-radius: 75px;
     }
 
@@ -373,6 +397,8 @@ form {
         display: flex;
         align-items: center;
         justify-content: center;
+        align-items: center;
+        margin: 0 auto;
         min-height: 82vh;
     }
 
@@ -380,7 +406,7 @@ form {
         min-width: 83vw;
         max-width: 88vw;
         margin: 0px;
-        min-height: 108vh;
+        height: auto;
     }
 
     .textsForm button {
