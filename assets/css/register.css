@@ -63,13 +63,16 @@ input {
     --montserrat: "Montserrat", sans-serif;
 }
 
-body {
+body,
+html {
     background-color: var(--background-color);
     overflow-x: hidden;
     background-image: url(../img/imagemBackgroundRegister.svg);
     background-repeat: no-repeat;
     background-size: cover;
     font-family: var(--montserrat);
+    height: auto;
+    min-height: 100vh;
 }
 
 /* Return Style */
@@ -78,7 +81,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 15vw;
+    width: auto;
     margin: 2%;
     color: #fff;
     text-decoration: none;
@@ -89,14 +92,14 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #FF8F00;
-    width: 3vw;
-    height: 6vh;
+    width: 4em;
+    height: 4em;
     border-radius: 10px;
 }
 
 .logoAbade img {
-    width: 5vw;
-    height: 5vh;
+    width: 3em;
+    height: 3em;
 }
 
 .text p {
@@ -115,14 +118,13 @@ body {
 }
 
 .blackTransparent {
-    width: 31vw;
-    max-width: 36vw;
+    width: 55vw;
+    max-width: 55;
     min-height: 46vh;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     margin: 0vh 7vw;
     border-radius: 42px;
-    margin-top: 4vh;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
     position: relative;
     -webkit-backdrop-filter: blur(10px);
@@ -141,8 +143,6 @@ body {
     font-style: italic;
     color: #fff;
     text-align: left;
-    width: 29vw;
-    white-space: nowrap;
     overflow: hidden;
 }
 
@@ -160,6 +160,75 @@ body {
     gap: 15px;
     margin-bottom: 2vh;
 }
+
+
+@media screen and (max-width: 1559px) {
+    .logoAbade {
+        width: 5vw !important;
+    }
+
+    .blackTransparent {
+        width: 79vw;
+        max-width: 76vw;
+        min-height: 46vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        margin: 0vh 7vw;
+        border-radius: 42px;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        position: relative;
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+}
+
+.passwordInput {
+    display: none !important;
+}
+
+@media screen and (max-width: 1180px) {
+    .logoAbade {
+        width: 16vw !important;
+    }
+
+    .input-container label {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        color: #aaa;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        font-size: 15px;
+        background-color: transparent;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px;
+    }
+
+    .input-container.full-row {
+        grid-column: auto !important;
+    }
+
+    .passwordInput {
+        display: block !important;
+        margin: 0 auto;
+    }
+
+    .full-rowPassword {
+        display: none !important;
+    }
+
+    .toggle-password {
+        right: 3vw;
+        top: 2.5vh;
+    }
+}
+
+
 
 .social-icons a {
     display: flex;
@@ -217,13 +286,20 @@ body {
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 8px;
 }
 
 .form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    /* Três colunas */
+    gap: 16px;
+    /* Espaço entre os elementos */
+}
+
+.input-container.full-row {
+    grid-column: span 3;
+    /* Ocupa todas as colunas */
 }
 
 .input-container {
@@ -316,21 +392,38 @@ button:hover {
 }
 
 .input-container select {
-    width: 86%;
-    padding: 2vh;
-    margin: 0 auto;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    background-color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 13px;
+    border: none;
     font-size: 16px;
-    color: #aaa;
+    color: #fff;
     background-color: transparent;
-    transition: border-color 0.3s, box-shadow 0.3s;
     outline: none;
-    cursor: pointer;
+    border: 1px solid #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px;
     appearance: none;
-    /* Remove o estilo padrão do select */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-container:has(select option:checked:not([value=""])) label {
+    top: 7px;
+    font-size: 12px;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 0 5px;
+}
+
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    background-color: transparent;
 }
 
 .input-container select:focus {
@@ -400,7 +493,6 @@ button:hover {
 }
 
 
-
 @media screen and (max-width: 425px) {
 
     .logoAbadeSuger {
@@ -411,19 +503,11 @@ button:hover {
         width: 70vw;
     }
 
-    .logoAbade {
-        width: 12vw;
-    }
 
     .container {
         justify-content: center;
         width: 100vw;
-        height: 65vh;
-    }
-
-    .blackTransparent {
-        width: 86vw;
-        max-width: 87vw;
+        height: auto;
     }
 
     .form-container h1 {
@@ -433,7 +517,7 @@ button:hover {
         font-style: italic;
         color: #fff;
         text-align: left;
-        width: 56vw;
+        width: auto;
         white-space: normal;
         overflow: hidden;
     }
@@ -445,7 +529,7 @@ button:hover {
 
     .toggle-password {
         right: 3vw;
-        top: 3.5vh;
+        top: 2.7vh;
     }
 
     .after .input-container label {
@@ -461,4 +545,76 @@ button:hover {
 }
 
 
-@media screen and (min-width: 1069) {}
+/* Modal de Sucesso */
+/* Estilização básica do modal */
+#success-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    /* Inicialmente oculto */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: #000;
+}
+
+.modal-content {
+    position: relative;
+    /* Necessário para o posicionamento absoluto do botão "X" */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    width: 400px;
+    /* Ajuste conforme necessário */
+    margin: auto;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin: 0 0 10px;
+    font-family: var(--montserrat);
+    font-size: 1.6rem;
+}
+
+.modal-content p {
+    color: #000;
+    font-family: var(--montserrat);
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 4%;
+}
+
+.modal-content button {
+    background-color: var(--dark-yellow);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--montserrat);
+}
+
+.modal-content button:hover {
+    background-color: var(--yellow);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.close-btn:hover {
+    color: #f00;
+}

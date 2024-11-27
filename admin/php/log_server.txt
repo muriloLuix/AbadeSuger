@@ -1,0 +1,10 @@
+ID recebido para exclusão: 0
+Nenhuma linha encontrada para o ID: 0
+ID recebido para exclusão: 0
+Nenhuma linha encontrada para o ID: 0
+ID recebido para exclusão: 0
+Nenhuma linha encontrada para o ID: 0
+ID recebido para exclusão: 0
+Nenhuma linha encontrada para o ID: 0
+ID recebido para exclusão: 0
+Erro: ID inválido recebido! 

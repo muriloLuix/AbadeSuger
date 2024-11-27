@@ -1,0 +1,484 @@
+@charset "UTF-8";
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+/* General Styles */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+
+select,
+textarea,
+input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c2bfbf;
+    opacity: 0.9;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+
+:root {
+    --background-color: #eaf5f7;
+    --text-color: #dfebed;
+    --dark-yellow: #ffa815;
+    --yellow: #ffca42;
+    --dark-purple: #312682;
+    --purple: #513de1;
+    --brand-color: #ffd200;
+    --montserrat: "Montserrat", sans-serif;
+}
+
+/* Body Style */
+body {
+    background-color: var(--background-color);
+    overflow-x: hidden;
+    background-image: url(../img/nossasInspiracoes.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.transparentSection {
+    width: 98%;
+    max-width: 98%;
+    height: 84vh;
+    background-color: transparent;
+    margin: 12vh auto;
+    border-radius: 42px;
+    margin-top: 2%;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    position: relative;
+}
+
+/* GENERAL HEADER */
+
+/* Header Style */
+
+.generalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+    gap: 8vw;
+    color: #fff;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    font-family: var(--montserrat);
+}
+
+.logo img {
+    width: 3vw;
+    height: auto;
+    margin-left: 4.5vw;
+}
+
+.delivery-info {
+    margin-left: 2vw;
+}
+
+.delivery-info p {
+    margin: 0;
+    font-weight: lighter;
+    min-width: 15vw;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    color: #fff;
+}
+
+.location svg {
+    margin-right: 0.5rem;
+}
+
+.location span {
+    text-decoration: none !important;
+    color: #fff;
+    font-family: var(--montserrat);
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+#nameCity {
+    font-weight: 300;
+}
+
+.dropdown {
+    margin-left: 2vw;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: .5vw;
+    position: relative;
+}
+
+.search-container input {
+    padding-left: 4vw;
+    border-radius: 40px;
+    border: 2px solid #fff;
+    height: 7vh;
+    width: 33vw;
+    max-width: 30.5vw;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+}
+
+.search-container input::placeholder {
+    color: #ffffff79;
+    font-weight: lighter;
+}
+
+.search-container svg {
+    position: absolute;
+    left: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1px;
+    width: 3vw;
+    height: 4vh;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        background-color: transparent;
+        font-weight: normal;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+        background-color: #312682;
+        font-weight: bold;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        background-color: transparent;
+        font-weight: normal;
+    }
+}
+
+.blink {
+    animation: blink 0.5s ease-in-out;
+    border-radius: 3px;
+    padding: 2px 4px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-left: 2vw;
+    cursor: pointer;
+}
+
+#bag-badge {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#bag-badge.updated {
+    transform: scale(1.5);
+    opacity: 0.8;
+}
+
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1vw;
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+}
+
+.icons svg {
+    width: 6vw;
+    height: 3vh;
+}
+
+.icons .bi-newspaper {
+    font-size: 1.6rem;
+}
+
+.icon span {
+    font-family: var(--montserrat);
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+.icon a {
+    text-decoration: none;
+    /* Remove sublinhado do link */
+    color: inherit;
+    /* Inherit para usar a cor definida no pai (.icon) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: 1vw;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+/* GENERAL HEADER */
+
+/* Text General */
+
+/* Titles */
+
+.titles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--montserrat);
+    color: #fff;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+.titles h3 {
+    font-size: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+/* Titles */
+
+/* Text */
+
+.text {
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 50vw;
+    margin-top: 5vh;
+    overflow: auto;
+    max-height: 42vh;
+}
+
+.text h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 3vh;
+}
+
+.text h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 3vh;
+}
+
+.text p {
+    font-family: var(--montserrat);
+    color: var(--text-color);
+    margin-top: 2vh;
+    font-size: 1.1rem;
+}
+
+.citacao {
+    font-style: italic;
+}
+
+/* Text */
+
+/* Text General */
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .generalHeader {
+        flex-wrap: wrap;
+        gap: 2vw;
+        padding: 0 0.5rem;
+    }
+
+    .logo img {
+        width: 8vw;
+        margin: 0 auto;
+    }
+
+    .search-container {
+        width: 80%;
+        margin: 1rem auto;
+    }
+
+    .search-container input {
+        width: 100%;
+        padding-left: 2rem;
+    }
+
+    .search-container svg {
+        left: 1rem;
+        width: 5vw;
+    }
+
+    .icons {
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .icon span {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .generalHeader {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo img {
+        width: 12vw;
+        margin: 1rem 0;
+    }
+
+    .search-container {
+        width: 90%;
+    }
+
+    .icons {
+        flex-direction: column;
+        margin-top: 1rem;
+        gap: 0.5rem;
+    }
+
+    .icon {
+        margin: 0;
+    }
+
+    .delivery-info {
+        margin: 0.5rem 0;
+    }
+
+    .delivery-info .location span {
+        font-size: 1.5rem;
+    }
+
+    .titles h1 {
+        font-size: 1.8rem;
+    }
+
+    .titles h3 {
+        font-size: 1.2rem;
+    }
+
+    .text {
+        max-width: 90%;
+        margin-top: 3vh;
+    }
+
+    .text h3 {
+        font-size: 1.1rem;
+    }
+
+    .text p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .generalHeader {
+        padding: 0.5rem;
+        gap: 1rem;
+    }
+
+    .logo img {
+        width: 18vw;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    .search-container input {
+        font-size: 0.9rem;
+        padding-left: 1rem;
+    }
+
+    .search-container svg {
+        width: 4vw;
+    }
+
+    .icons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .titles h1 {
+        font-size: 1.5rem;
+    }
+
+    .titles h3 {
+        font-size: 1rem;
+    }
+
+    .text h3 {
+        font-size: 1rem;
+    }
+
+    .text p {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --background-color: #eaf5f7;
+    --text-color: #dfebed;
+    --dark-yellow: #ffa815;
+    --yellow: #ffca42;
+    --dark-purple: #312682;
+    --purple: #513de1;
+    --brand-color: #ffd200;
+    --montserrat: "Montserrat", sans-serif;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    margin: 0 auto;
+    font-family: var(--montserrat);
+    background: url(../img/descriptionProductImg.svg);
+    background-size: cover;
+    animation: fadeIn 1s ease-in-out;
+
+}
+
+.transparentSection {
+    min-width: 98%;
+    min-height: 96vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    border-radius: 42px;
+    margin-top: 1%;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    position: relative;
+}
+
+/* Header Style */
+
+.generalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+    gap: 8vw;
+    color: #fff;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    font-family: var(--montserrat);
+}
+
+.logo img {
+    width: 3vw;
+    height: auto;
+    margin-left: 4.5vw;
+}
+
+.delivery-info {
+    margin-left: 2vw;
+}
+
+.delivery-info p {
+    margin: 0;
+    font-weight: lighter;
+    min-width: 15vw;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    color: #fff;
+}
+
+.location svg {
+    margin-right: 0.5rem;
+}
+
+.location span {
+    text-decoration: none !important;
+    color: #fff;
+    font-family: var(--montserrat);
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+#nameCity {
+    font-weight: 300;
+}
+
+.dropdown {
+    margin-left: 2vw;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: .5vw;
+    position: relative;
+}
+
+.search-container input {
+    padding-left: 4vw;
+    border-radius: 40px;
+    border: 2px solid #fff;
+    height: 7vh;
+    width: 33vw;
+    max-width: 30.5vw;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+}
+
+.search-container input::placeholder {
+    color: #ffffff79;
+    font-weight: lighter;
+}
+
+.search-container svg {
+    position: absolute;
+    left: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1px;
+    width: 3vw;
+    height: 4vh;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        background-color: transparent;
+        font-weight: normal;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+        background-color: #312682;
+        font-weight: bold;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        background-color: transparent;
+        font-weight: normal;
+    }
+}
+
+.blink {
+    animation: blink 0.5s ease-in-out;
+    border-radius: 3px;
+    padding: 2px 4px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-left: 2vw;
+    cursor: pointer;
+}
+
+#bag-badge {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#bag-badge.updated {
+    transform: scale(1.5);
+    opacity: 0.8;
+}
+
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1vw;
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+}
+
+.icons svg {
+    width: 6vw;
+    height: 3vh;
+}
+
+.icons .bi-newspaper {
+    font-size: 1.6rem;
+}
+
+.icon span {
+    font-family: var(--montserrat);
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+.icon a {
+    text-decoration: none;
+    /* Remove sublinhado do link */
+    color: inherit;
+    /* Inherit para usar a cor definida no pai (.icon) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: 1vw;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+
+/* Dropdown Style */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid white;
+    border-radius: 52px;
+    color: white;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    max-width: 20vw;
+    min-width: 10vw;
+    height: 8vh;
+    cursor: pointer;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-toggle .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.dropdown-toggle .typeOfFilter {
+    font-weight: lighter;
+}
+
+.dropdown-toggle .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-toggle .icon svg {
+    fill: white;
+    width: 4vw;
+    height: 6vh;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid white;
+    border-radius: 36px;
+    padding: 1rem;
+    z-index: 1050;
+    top: 105%;
+    left: 0;
+    min-width: 100%;
+    transition: all .3s ease;
+}
+
+.dropdown-menu:hover {
+    background-color: #ECECEC;
+}
+
+.dropdown-item {
+    color: #000 !important;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: block;
+    border-radius: 5em;
+    width: 100%;
+    text-align: center;
+    transition: all .3s ease;
+
+}
+
+.dropdown-item:hover {
+    background-color: var(--dark-purple);
+    color: #fff !important;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Container Style */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.price {
+    font-family: var(--montserrat);
+    font-size: 3rem;
+    color: var(--brand-color) !important;
+    letter-spacing: 5px;
+    font-weight: bold;
+    background: linear-gradient(to right, var(--brand-color), #ff7e00);
+    /* Gradiente para chamar atenção */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Para aplicar o gradiente no texto */
+    padding: 10px 0;
+    /* Espaçamento vertical */
+    border-bottom: 3px solid var(--brand-color);
+    /* Linha embaixo para destacar */
+}
+
+.price:hover {
+    color: #ff7e00 !important;
+    /* Mudar a cor no hover */
+}
+
+
+.container p {
+    color: #fff;
+    font-family: var(--montserrat);
+}
+
+/* Container Style */
+
+/* Textarea */
+
+textarea {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: inherit;
+    resize: none;
+    box-shadow: none;
+    appearance: none;
+}
+
+
+textarea {
+    width: 22vw;
+    height: 15vh;
+    color: #fff;
+    font-family: var(--montserrat);
+}
+
+
+/* Textarea */
+
+
+/* CSS */
+
+a{
+    text-decoration: none;
+}
+.button-86 {
+    all: unset;
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    position: relative;
+    color: #f0f0f0;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-86::after,
+.button-86::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all .4s;
+}
+
+.button-86::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #28282d;
+    border-radius: 10px;
+}
+
+.button-86::after {
+    transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #ffffff15;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+}
+
+.button-86:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+}
+
+.button-86:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+.button-86:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+}

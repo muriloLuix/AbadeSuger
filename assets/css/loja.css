@@ -14,6 +14,32 @@
     }
 }
 
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: var(--dark-purple);
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: #6a040f;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color);
+}
+
+::-webkit-scrollbar-thumb:focus {
+    border-radius: 20px;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -73,7 +99,6 @@ body {
     background-image: url(../img/backgroundLojaLight.svg);
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 135vh;
 }
 
 .transparentSection {
@@ -126,6 +151,11 @@ body {
 
 .location svg {
     margin-right: 0.5rem;
+}
+
+.location a {
+    text-decoration: none !important;
+    color: #fff;
 }
 
 #nameCity {
@@ -202,7 +232,18 @@ body {
     display: flex;
     align-items: center;
     margin-left: 2vw;
+    cursor: pointer;
 }
+
+#bag-badge {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#bag-badge.updated {
+    transform: scale(1.5);
+    opacity: 0.8;
+}
+
 
 .icon {
     display: flex;
@@ -211,6 +252,8 @@ body {
     margin-left: 1vw;
     color: #fff;
     position: relative;
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
 }
 
 .icons svg {
@@ -222,6 +265,16 @@ body {
     font-family: var(--montserrat);
     font-weight: lighter;
     font-size: 1rem;
+}
+
+.icon a {
+    text-decoration: none;
+    /* Remove sublinhado do link */
+    color: inherit;
+    /* Inherit para usar a cor definida no pai (.icon) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .badge {
@@ -379,18 +432,44 @@ body {
 
 .cardContainer {
     display: flex;
+    margin: 4vw;
     flex-wrap: wrap;
     gap: 3.5vw;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 20px;
     margin-top: 1vh;
 }
 
+.product-price {
+    font-family: var(--montserrat);
+    color: var(--dark-purple);
+    font-weight: bold;
+    font-size: 1.5rem;
+    /* Aumenta o tamanho da fonte para torná-lo mais visível */
+    letter-spacing: 1px;
+    /* Adiciona espaçamento entre as letras para um efeito mais nítido */
+    text-transform: uppercase;
+    /* Torna o texto em caixa alta para um visual mais forte */
+    padding: 5px 10px;
+    /* Adiciona espaçamento ao redor do preço */
+    border-radius: 10px;
+    /* Bordas arredondadas para suavizar */
+    transition: all 0.3s ease;
+    /* Transição suave ao interagir com o preço */
+}
+
+.product-price:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(var(--dark-purple), 0.3);
+    /* Destaque ao focar o preço */
+}
+
+
 
 .card {
     background-color: #ECECEC;
-    width: 11.8vw;
-    height: 34vh;
+    width: 18.8vw;
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -412,20 +491,33 @@ body {
     right: 10px;
     border: none;
     background: none;
-    padding: 0px;
+    padding: 2%;
 }
 
-.favorite-icon,
-.info-icon {
+.favorite-icon svg,
+.info-icon svg {
     font-size: 24px;
     cursor: pointer;
     color: #3E30AB;
+    transition: all .3s ease;
+}
+
+.favorite-icon svg:hover,
+.info-icon svg:hover {
+    transform: scale(1.09);
+}
+
+.favorite-icon svg:active,
+.info-icon svg:active {
+    transform: scale(0.09);
 }
 
 .book-image {
-    max-width: 12vw;
-    max-height: 16vh;
-    margin: 10px auto;
+    max-width: 17vw;
+    max-height: 41vh;
+    position: relative;
+    z-index: -1;
+    margin: 29px auto;
 }
 
 .product-name {
@@ -437,27 +529,78 @@ body {
     font-weight: 700;
 }
 
+/* Botão de compra */
 .buy-button {
     background-color: var(--dark-purple);
     color: #ffffff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 40px;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    /* Aumenta o arredondamento para um visual mais suave */
     cursor: pointer;
-    font-size: .9rem;
-    margin-top: 10px;
-    height: 2vw;
+    font-size: 1rem;
+    /* Aumentei o tamanho da fonte para um visual mais legível */
+    margin-top: 15px;
+    height: 3vw;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all .3s ease;
+    transition: all 0.3s ease, transform 0.2s ease;
+    /* Efeito de transformação suave */
     font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Adiciona sombra suave */
 }
 
 .buy-button:hover {
-    background-color: #484183;
+    background-color: var(--purple);
+    color: var(--text-color);
+    border: 1px solid var(--dark-purple);
+    transform: translateY(-3px);
+    /* Adiciona um efeito de elevação */
 }
+
+.buy-button:focus {
+    outline: none;
+    /* Remove o contorno padrão */
+    box-shadow: 0 0 0 4px rgba(var(--dark-purple), 0.3);
+    /* Destaque ao focar no botão */
+}
+
+/* Botão de descrição */
+.description-button {
+    background-color: var(--background-color);
+    border: 1px solid var(--dark-purple);
+    color: var(--dark-purple);
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 15px;
+    height: 3vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.description-button:hover {
+    background-color: var(--dark-yellow);
+    color: var(--dark-purple);
+    transform: translateY(-3px);
+}
+
+.description-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(var(--dark-purple), 0.3);
+}
+
 
 .menu-hamburger {
     display: none;

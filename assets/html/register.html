@@ -18,12 +18,13 @@
     <script src="../js/index.js" type="module" defer></script>
     <script src="../js/cep.js" defer></script>
     <script src="../js/seePassword.js" defer></script>
+    <script src="../js/modal.js" defer></script>
     <!-- JavaScript -->
-    <title>| Faça seu cadastro</title>
+    <title> Abade Suger - Faça seu cadastro</title>
 </head>
 
 <body>
-    <a href="../../index.html" class="backToMain">
+    <a href="../../index.php" class="backToMain">
         <div class="logoAbade">
             <img src="../img/logoMenu.svg" alt="Logo">
         </div><!--logoAbade-->
@@ -47,7 +48,7 @@
                     <div class="divider">
                         <span>ou</span>
                     </div> -->
-                    <form id="login-form">
+                    <form id="login-form" method="post" action="../php/cadastrar_cliente.php">
                         <div class="form-grid">
                             <div class="input-container">
                                 <input type="text" id="cli_nome" name="cli_nome" placeholder=" " required>
@@ -65,7 +66,7 @@
                             <div class="input-container">
                                 <input type="text" id="cli_dtnasc" name="cli_dtnasc" placeholder=" " required
                                     maxlength="10">
-                                <label for="cli_dtnasc">Data de nascimento</label>
+                                <label for="cli_dtnasc">Nascimento</label>
                             </div>
                             <div class="input-container">
                                 <input type="email" id="cli_email" name="cli_email" placeholder=" " required>
@@ -100,8 +101,31 @@
                                 <input type="text" id="cli_complemento" name="cli_complemento" placeholder=" ">
                                 <label for="cli_complemento">Complemento</label>
                             </div>
+                            <!-- Campos com linha inteira -->
+                            <div class="input-container full-row">
+                                <input type="text" id="cli_cpf" name="cli_cpf" placeholder=" " required
+                                    oninput="mascaraCPF(this)" maxlength="14">
+                                <label for="cli_cpf">CPF</label>
+                            </div>
+                            <div class="input-container full-row">
+                                <select name="gen_id" id="gen_id" required>
+                                    <option value="" selected disabled></option>
+                                    <option value="1">Masculino</option>
+                                    <option value="2">Feminino</option>
+                                    <option value="3">Prefiro não dizer</option>
+                                    <option value="4">Outro</option>
+                                </select>
+                                <label for="gen_id">Gênero</label>
+                            </div>
+                            <div class="input-container full-row full-rowPassword">
+                                <input type="password" id="cli_senha" name="cli_senha" placeholder=" " required>
+                                <label for="cli_senha">Sua Senha</label>
+                                <span class="toggle-password">
+                                    <i class="bi bi-eye-fill" onclick="showPassword()" id="btnPassword"></i>
+                                </span>
+                            </div>
                         </div>
-                        <div class="input-container password-container">
+                        <div class="input-container passwordInput">
                             <input type="password" id="cli_senha" name="cli_senha" placeholder=" " required>
                             <label for="cli_senha">Sua Senha</label>
                             <span class="toggle-password">
@@ -111,6 +135,14 @@
                         <button type="submit">CRIAR CADASTRO</button>
                     </form>
                 </div>
+            </div>
+        </div>
+        <div id="success-modal" style="display: none;">
+            <div class="modal-content">
+                <span id="close-modal" class="close-btn">&times;</span> <!-- Botão para fechar -->
+                <h2>Cadastro realizado com sucesso!</h2>
+                <p>Seu cadastro foi concluído. Clique abaixo para realizar o login.</p>
+                <a href="login.php"> <button id="btn-login">Realizar Login</button></a>
             </div>
         </div>
     </main>

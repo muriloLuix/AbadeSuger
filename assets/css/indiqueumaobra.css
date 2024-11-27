@@ -65,10 +65,22 @@ input {
 /* Body Style */
 body {
     background-color: var(--background-color);
-    overflow-x: hidden;
+    overflow: hidden;
     background-image: url(../img/backgroundIndiqueObra.svg);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@media screen and (min-width: 1180px) {
+    body {
+        min-height: 94em;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    body {
+        min-height: 94em;
+    }
 }
 
 /* Main Style */
@@ -100,7 +112,7 @@ body {
     text-transform: uppercase;
     font-family: var(--montserrat);
     font-weight: 500;
-    font-size: 4rem;
+    font-size: clamp(1.5rem, 2.5vw, 4rem);
     letter-spacing: 3px;
     white-space: nowrap;
 }
@@ -112,19 +124,26 @@ body {
     min-height: 15vh;
     text-align: justify;
     margin-top: 3%;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 
 .aboutForm {
     height: 4vh !important;
 }
 
+@media screen and (max-width: 1552px) {
+    .textsForm .form-footer {
+        gap: 2vw;
+        flex-direction: column;
+    }
+
+}
+
 .form form {
     background-color: rgba(255, 255, 255, 0.3);
     width: 32vw;
-    max-width: 32vw;
-    margin-left: 7vw;
-    margin-top: 2vh;
+    max-width: 80vw;
+    margin: 2vh auto;
     border-radius: 30px;
     height: 84vh;
     font-family: var(--montserrat);
@@ -334,32 +353,44 @@ form {
     display: none;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1024px) {
     body {
-        min-height: 243vh;
+        min-height: 122vh;
+        overflow: auto !important;
+    }
+
+    .attachment form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
     }
 
     .generalDiv {
         flex-direction: column;
+        gap: 2em;
     }
 
     .texts h1 {
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 
     .texts p {
         width: 76vw;
-        min-height: 64vh;
+        min-height: 21vh;
     }
 
     .transparentSection {
-        min-height: 229vh;
+        height: auto;
+        margin-bottom: 2vh;
     }
 
+
     .attachment label {
-        width: 57vw;
-        height: 18vh;
+        width: 80%;
+        max-width: 60vw;
+        height: auto;
         border-radius: 75px;
     }
 
@@ -367,6 +398,8 @@ form {
         display: flex;
         align-items: center;
         justify-content: center;
+        align-items: center;
+        margin: 0 auto;
         min-height: 82vh;
     }
 
@@ -374,7 +407,7 @@ form {
         min-width: 83vw;
         max-width: 88vw;
         margin: 0px;
-        min-height: 108vh;
+        height: auto;
     }
 
     .textsForm button {
@@ -392,13 +425,13 @@ form {
 
     /* Menu Celular */
 
-
     .orange {
         background-color: #FF8F00;
         z-index: 9999;
         position: fixed;
+        left: 12.5vw;
         height: 7vh;
-        width: 7vh;
+        width: 13.8vw;
         border-radius: 10px;
         display: flex;
         justify-content: center;
@@ -413,23 +446,60 @@ form {
 
     .dropdown {
         position: fixed;
-        top: .5vh;
-        left: 3.2vw;
-        width: 16.8vw;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background-color: #161616;
         display: none;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        z-index: 9998;
+        z-index: 9999;
         opacity: 0;
-        transform: translateY(-20px);
         transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-        border-radius: 15px;
     }
 
-    .dropdown-item {
-        width: 100%;
+    .dropdown.open {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #ffffff;
+        cursor: pointer;
+        z-index: 10000;
+    }
+
+    .lineMenu {
+        color: var(--dark-yellow);
+        width: 80%;
+        height: 1px;
+        background-color: var(--dark-yellow);
+        margin: 10px 0;
+    }
+
+    .inspiracoes,
+    .lojaMenu,
+    .agendaMenu,
+    .publiqueObraMenu,
+    .indiqueUmaObraMenu,
+    .contaMenu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: var(--montserrat);
+        color: var(--text-color);
+        font-weight: lighter;
         padding: 10px 0;
         text-align: center;
     }
@@ -439,10 +509,5 @@ form {
         height: 24px;
     }
 
-    .dropdown.open {
-        display: flex;
-        opacity: 1;
-        transform: translateY(0);
-        padding-top: 7vh;
-    }
+    /* Menu Celular End */
 }

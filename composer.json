@@ -1,0 +1,17 @@
+{
+    "name": "murilo/abade-suger",
+    "autoload": {
+        "psr-4": {
+            "Murilo\\AbadeSuger\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Murilo Luiz Jaboinski",
+            "email": "muriloluiz654@gmail.com"
+        }
+    ],
+    "require": {
+        "gerencianet/gerencianet-sdk-php": "^5.1"
+    }
+}

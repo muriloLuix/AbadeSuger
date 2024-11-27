@@ -31,17 +31,8 @@
             <div class="blackTransparent" id="blackTransparent">
                 <div class="form-container">
                     <h1>REALIZE SEU LOGIN</h1>
-                    <p>Seja bem vindo!</p>
-                    <!-- <div class="social-icons">
-                        <a href="#" id="login-google"><img src="../img/iconesCadastro/google.svg" alt="Google"></a>
-                        <a href="#"><img src="../img/iconesCadastro/Vector.svg" alt="Apple"></a>
-                        <a href="#"><img src="../img/iconesCadastro/Facebook.svg" alt="Facebook"></a>
-                        <a href="#"><img src="../img/iconesCadastro/microsoft.svg" alt="Microsoft"></a>
-                    </div>
-                    <div class="divider">
-                        <span>ou</span>
-                    </div> -->
-                    <form id="login-form">
+                    <p>Seja bem-vindo!</p>
+                    <form id="login-form" method="post" action="../php/login.php">
                         <div class="input-container">
                             <input type="text" id="cli_login" name="cli_login" placeholder=" " required>
                             <label for="cli_login">Seu Login</label>
@@ -55,7 +46,13 @@
                         </div>
                         <button type="submit">Entrar</button>
                     </form>
+
+                    <!-- Adicionando o link para o cadastro -->
+                    <div class="register-link">
+                        <p>Ainda não tem cadastro? <a href="register.html">Faça o seu!</a></p>
+                    </div>
                 </div>
+
             </div>
 
             <div class="logoAbadeSuger">

@@ -16,31 +16,60 @@
     <script src="../js/formIndique.js" defer></script>
     <script src="../js/archive.js" defer></script>
     <script src="../js/menu.js" defer></script>
-    <script src="../js/dropdown.js" defer></script>
     <!-- Script -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Font Awesome -->
-    <title> Indique uma obra</title>
+    <title> Abade Suger - Indique uma obra</title>
 </head>
 
 <body>
     <main>
-        <section class="transparentSection">
-            <div class="orange">
-                <img src="../img/logoMenu.svg" alt="Logo Menu" id="dropdown-btn">
+        <a href="../../index.php" class="custom-arrow-link">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <div class="orange">
+            <img src="../img/logoMenu.svg" alt="Logo Menu" id="dropdown-btn">
+        </div>
+        <div class="dropdown" id="dropdown-menu">
+            <button class="close-btn" id="close-menu">&times;</button>
+            <div class="inspiracoes">
+                <span>Inspirações</span>
+                <a href="../html/nossasinspiracoes.html" class="dropdown-item"><img src="../img/arvoreSvg.svg"
+                        alt="Nossas Inspirações"></a>
             </div>
-            <div class="dropdown" id="dropdown-menu">
-                <a href="../../index.html" class="dropdown-item"><img src="../img/arvoreSvg.svg" alt="Nossas Inspira��es"></a>
-                <a href="assets/html/nossaloja.html" class="dropdown-item"><img src="../img/shopping-bag.svg"
+            <hr class="lineMenu">
+            <div class="lojaMenu">
+                <span>Loja</span>
+                <a href="../html/nossaloja.php" class="dropdown-item"><img src="../img/shopping-bag.svg"
                         alt="Nossa loja"></a>
-                <a href="index.html" class="dropdown-item"><img src="../img/calendar.svg" alt="Agenda e Not�cias"></a>
+            </div>
+            <hr class="lineMenu">
+            <div class="agendaMenu">
+                <span>Agenda</span>
+                <a href="../html/noticias.php" class="dropdown-item"><img src="../img/calendar.svg"
+                        alt="Agenda e Notícias"></a>
+            </div>
+            <hr class="lineMenu">
+            <div class="publiqueObraMenu">
+                <span>Publique sua<br>Obra</span>
                 <a href="../html/publiquesuaobra.html" class="dropdown-item"><img src="../img/lamp.svg"
                         alt="Publicar uma obra"></a>
+            </div>
+            <hr class="lineMenu">
+            <div class="indiqueUmaObraMenu">
+                <span>Indique uma<br> Obra</span>
                 <a href="../html/indiqueumaobra.html" class="dropdown-item"><img src="../img/lupa.svg"
                         alt="Indique uma obra"></a>
-                <a href="../../index.html" class="dropdown-item"><img src="../img/user.svg" alt="Conta"></a>
             </div>
+            <hr class="lineMenu">
+            <div class="contaMenu">
+                <span>Conta</span>
+                <a href="../html/contacli.php" class="dropdown-item"><img src="../img/user.svg" alt="Conta"></a>
+            </div>
+        </div>
+        <section class="transparentSection">
+
             <div class="generalDiv">
                 <div class="texts">
                     <h1>INDIQUE UMA OBRA</h1>

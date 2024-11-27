@@ -1,0 +1,787 @@
+@charset "UTF-8";
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* General Styles */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: var(--dark-purple);
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: #6a040f;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color);
+}
+
+::-webkit-scrollbar-thumb:focus {
+    border-radius: 20px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+select,
+textarea,
+input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c2bfbf;
+    opacity: 0.9;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+
+:root {
+    --background-color: #eaf5f7;
+    --text-color: #dfebed;
+    --dark-yellow: #ffa815;
+    --yellow: #ffca42;
+    --dark-purple: #312682;
+    --purple: #513de1;
+    --brand-color: #ffd200;
+    --orange-form: #E24023;
+    --montserrat: "Montserrat", sans-serif;
+}
+
+/* Body Style */
+body {
+    background-color: var(--background-color);
+    overflow-x: hidden;
+    background-image: url(../img/agendaBackgorund.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Header Style */
+
+.generalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+    gap: 8vw;
+    color: #fff;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    font-family: var(--montserrat);
+}
+
+.logo img {
+    width: 3vw;
+    height: auto;
+    margin-left: 4.5vw;
+}
+
+.delivery-info {
+    margin-left: 2vw;
+}
+
+.delivery-info p {
+    margin: 0;
+    font-weight: lighter;
+    min-width: 15vw;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    color: #fff;
+}
+
+.location svg {
+    margin-right: 0.5rem;
+}
+
+.location span {
+    text-decoration: none !important;
+    color: #fff;
+    font-family: var(--montserrat);
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+#nameCity {
+    font-weight: 300;
+}
+
+.dropdown {
+    margin-left: 2vw;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: .5vw;
+    position: relative;
+}
+
+.search-container input {
+    padding-left: 4vw;
+    border-radius: 40px;
+    border: 2px solid #fff;
+    height: 7vh;
+    width: 33vw;
+    max-width: 30.5vw;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+}
+
+.search-container input::placeholder {
+    color: #ffffff79;
+    font-weight: lighter;
+}
+
+.search-container svg {
+    position: absolute;
+    left: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1px;
+    width: 3vw;
+    height: 4vh;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        background-color: transparent;
+        font-weight: normal;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+        background-color: #312682;
+        font-weight: bold;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        background-color: transparent;
+        font-weight: normal;
+    }
+}
+
+.blink {
+    animation: blink 0.5s ease-in-out;
+    border-radius: 3px;
+    padding: 2px 4px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-left: 2vw;
+    cursor: pointer;
+}
+
+#bag-badge {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#bag-badge.updated {
+    transform: scale(1.5);
+    opacity: 0.8;
+}
+
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1vw;
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+}
+
+.icons svg {
+    width: 6vw;
+    height: 3vh;
+}
+
+.icons .bi-newspaper {
+    font-size: 1.6rem;
+}
+
+.icon span {
+    font-family: var(--montserrat);
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+.icon a {
+    text-decoration: none;
+    /* Remove sublinhado do link */
+    color: inherit;
+    /* Inherit para usar a cor definida no pai (.icon) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: 1vw;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+
+/* Dropdown Style */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid white;
+    border-radius: 52px;
+    color: white;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    max-width: 20vw;
+    min-width: 10vw;
+    height: 8vh;
+    cursor: pointer;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-toggle .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.dropdown-toggle .typeOfFilter {
+    font-weight: lighter;
+}
+
+.dropdown-toggle .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-toggle .icon svg {
+    fill: white;
+    width: 4vw;
+    height: 6vh;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid white;
+    border-radius: 36px;
+    padding: 1rem;
+    z-index: 1050;
+    top: 105%;
+    left: 0;
+    min-width: 100%;
+    transition: all .3s ease;
+}
+
+.dropdown-menu:hover {
+    background-color: #ECECEC;
+}
+
+.dropdown-item {
+    color: #000 !important;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: block;
+    border-radius: 5em;
+    width: 100%;
+    text-align: center;
+    transition: all .3s ease;
+
+}
+
+.dropdown-item:hover {
+    background-color: var(--dark-purple);
+    color: #fff !important;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+/* Transparent Section */
+
+.transparentSection {
+    min-width: 98%;
+    width: 98%;
+    min-height: 96vh;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0 auto;
+    border-radius: 42px;
+    margin-top: 1%;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    position: relative;
+    padding: 1%;
+    margin-bottom: 2vh;
+}
+
+.transparentSection h1 {
+    font-family: var(--montserrat);
+    color: var(--text-color);
+    font-weight: bold;
+    margin: 5% 0;
+}
+
+
+/* Transparent Section */
+
+/* Container */
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+/* Container */
+
+/* Transparent Section Noticiais */
+.transparentSectionNoticiasPrioridade {
+    min-width: 53vw;
+    width: 53vw;
+    min-height: 38vh;
+    background: linear-gradient(to bottom, #ffffff33, #e6e6fa99);
+    border-radius: 16px;
+    margin-top: 1%;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    position: relative;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Highlight Text */
+.highlightText {
+    font-family: var(--montserrat);
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* Image Section */
+.imagemNoticia {
+    position: relative;
+}
+
+.imagemNoticia img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* Content Section */
+.contentSection {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+/* Logo and Name */
+.logoAbadeGeneral {
+    display: flex;
+    align-items: center;
+    width: 9vw;
+    gap: 1rem;
+}
+
+.logoAbade {
+    background: var(--dark-purple);
+    border-radius: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+}
+
+.logoAbade img {
+    width: 2vw;
+    height: 4vh;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nomeAbade {
+    font-size: 1rem;
+    color: #fff;
+    font-family: var(--montserrat);
+    font-weight: lighter;
+}
+
+/* Title */
+.tituloNoticia {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: #fff;
+    font-family: var(--montserrat);
+    font-weight: 600;
+}
+
+/* Button */
+.btnNoticia {
+    margin-top: auto;
+    display: flex;
+    /* Garante flexibilidade para alinhamento */
+    justify-content: flex-end;
+    /* Alinha o botão à direita */
+    width: 100%;
+    /* Ocupa a largura total */
+}
+
+.agendaButton {
+    background-color: var(--dark-purple);
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    font-family: var(--montserrat);
+    font-weight: 600;
+}
+
+.agendaButton:hover {
+    background-color: #5336a9;
+}
+
+/* Novo Card - Layout Independente */
+.novoCard {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    min-width: 53vw;
+    width: 53vw;
+    min-height: 20vh;
+    margin-top: 1.5rem;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+/* Imagem */
+.novoCard .imagemNoticia img {
+    width: 20vw;
+    height: 33vh;
+    border-radius: 12px;
+}
+
+/* Conteúdo */
+.novoCard .contentSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    /* Ocupa o restante do espaço */
+}
+
+/* Logo e Nome */
+.novoCard .logoAbadeGeneral {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.novoCard .logoAbade img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Título */
+.novoCard .tituloNoticia {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Descrição */
+.novoCard .descricaoNoticia {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 0.5rem;
+    font-family: var(--montserrat);
+}
+
+/* Informações e Botão */
+/* Informações e Botão */
+.novoCard .infoNoticia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Garante alinhamento vertical */
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.novoCard .infoNoticia span {
+    font-size: 0.8rem;
+    color: #fff;
+    font-family: var(--montserrat);
+}
+
+/* Botão com SVG */
+.novoCard .infoNoticia .verMaisButton {
+    display: flex;
+    /* Torna o botão um contêiner flexível */
+    align-items: center;
+    /* Alinha o conteúdo interno verticalmente */
+    gap: 0.5rem;
+    /* Espaçamento entre o texto e o ícone SVG */
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--montserrat);
+    background: none;
+}
+
+/* Novo Card 2 */
+
+/* Novo Card - Layout Independente */
+
+
+.novoCard2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 40vw;
+    width: 40vw;
+    margin-top: 1.5rem;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    padding: 0px;
+}
+
+/* Título */
+.novoCard2 h1 {
+    background-color: var(--dark-purple);
+    color: #ffffff;
+    margin: 0;
+    padding: 1rem;
+    width: 100%;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    text-align: left;
+    font-family: var(--montserrat);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Imagem */
+.novoCard2 .imagemNoticia img {
+    width: 20vw;
+    height: 33vh;
+    border-radius: 12px;
+}
+
+/* Conteúdo */
+.novoCard2 .contentSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    /* Ocupa o restante do espaço */
+}
+
+/* Logo e Nome */
+.novoCard2 .logoAbadeGeneral {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.novoCard2 .logoAbade img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Título */
+.novoCard2 .tituloNoticia {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Descrição */
+.novoCard2 .descricaoNoticia {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 0.5rem;
+    font-family: var(--montserrat);
+}
+
+/* Informações e Botão */
+/* Informações e Botão */
+.novoCard2 .infoNoticia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Garante alinhamento vertical */
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.novoCard2 .infoNoticia span {
+    font-size: 0.8rem;
+    color: #fff;
+    font-family: var(--montserrat);
+}
+
+/* Botão com SVG */
+.novoCard2 .infoNoticia .verMaisButton {
+    display: flex;
+    /* Torna o botão um contêiner flexível */
+    align-items: center;
+    /* Alinha o conteúdo interno verticalmente */
+    gap: 0.5rem;
+    /* Espaçamento entre o texto e o ícone SVG */
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--montserrat);
+    background: none;
+}
+
+
+/* Itens da agenda */
+.itensAgenda {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Estilo de cada item da agenda */
+.itemAgenda {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--montserrat);
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+/* Círculo indicador */
+.itemAgenda .circle {
+    width: 1vw;
+    height: 2vh;
+    border-radius: 50%;
+    background-color: #6b47dc;
+    /* Cor do círculo */
+    flex-shrink: 0;
+}
+
+/* Texto do evento */
+.itemAgenda .evento {
+    flex: 1;
+    font-weight: 500;
+    font-family: var(--montserrat);
+    font-size: 1.2rem;
+}

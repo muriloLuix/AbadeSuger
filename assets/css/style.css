@@ -70,12 +70,13 @@ body {
   background-image: url(../img/backgroundPaginaInicial.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
 }
 
 .transparentSection {
   width: 90%;
   max-width: 90%;
-  height: 84vh;
+  height: auto;
   background-color: transparent;
   margin: 12vh auto;
   border-radius: 42px;
@@ -332,12 +333,12 @@ body {
 /* Card Style */
 .card-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 2vw;
-  height: 36vh;
-  padding: 0 10vw;
+  padding: 4vw;
   margin-top: 2em;
   font-family: var(--montserrat);
   box-sizing: border-box;
@@ -353,7 +354,9 @@ body {
 
 .card {
   width: 13vw;
+  /* Mantém o tamanho consistente */
   height: 28vh;
+  /* Mantém o tamanho consistente */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -368,14 +371,15 @@ body {
   box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.3);
 }
 
+
 .card-1 {
-  background: url(../img/NOSSA\ INSPIRAÇÕES.svg);
+  background: url(../img/NOSSA-INSPIRAÇÕES.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card-2 {
-  background: url(../img/NOSSA\ LOJA.svg);
+  background: url(../img/NOSSA-LOJA.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -387,7 +391,7 @@ body {
 }
 
 .card-4 {
-  background: url(../img/QUER\ PUBLICAR_.svg);
+  background: url(../img/QUER-PUBLICAR.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -399,7 +403,7 @@ body {
 }
 
 .card-6 {
-  background: url(../img/INDIQUE\ UMA\ OBRA.svg);
+  background: url(../img/INDIQUE-UMA-OBRA.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -416,6 +420,26 @@ body {
   box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.4);
 }
 
+@media (max-width: 1440px) {
+  .card-container {
+    justify-content: flex-start;
+    /* Organiza os itens a partir do início */
+    gap: 1em;
+    /* Ajusta o espaço entre os cards */
+  }
+
+  .card {
+    width: 20vw;
+    /* Adapta os cards para telas menores */
+    height: 30vh;
+    /* Ajusta a altura dos cards */
+  }
+
+  .card-container .card:hover {
+    width: 25vw;
+    /* Mantém o efeito ao passar o mouse */
+  }
+}
 
 /* Footer Style */
 
@@ -683,7 +707,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 597px) {
   body {
     width: 100vw;
     margin: 0;
@@ -700,6 +724,7 @@ footer {
     background-color: #FF8F00;
     z-index: 9999;
     position: fixed;
+    left: 12.5vw;
     height: 7vh;
     width: 13.8vw;
     border-radius: 10px;
@@ -716,23 +741,60 @@ footer {
 
   .dropdown {
     position: fixed;
-    top: .5vh;
-    left: 3.2vw;
-    width: 16.8vw;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: #161616;
     display: none;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    z-index: 9998;
+    z-index: 9999;
     opacity: 0;
-    transform: translateY(-20px);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    border-radius: 15px;
   }
 
-  .dropdown-item {
-    width: 100%;
+  .dropdown.open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  .lineMenu {
+    color: var(--dark-yellow);
+    width: 80%;
+    height: 1px;
+    background-color: var(--dark-yellow);
+    margin: 10px 0;
+  }
+
+  .inspiracoes,
+  .lojaMenu,
+  .agendaMenu,
+  .publiqueObraMenu,
+  .indiqueUmaObraMenu,
+  .contaMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: var(--montserrat);
+    color: var(--text-color);
+    font-weight: lighter;
     padding: 10px 0;
     text-align: center;
   }
@@ -740,13 +802,6 @@ footer {
   .dropdown-item img {
     width: 24px;
     height: 24px;
-  }
-
-  .dropdown.open {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
-    padding-top: 7vh;
   }
 
   /* Menu Celular End */
@@ -850,11 +905,11 @@ footer {
   }
 
   .card-1 {
-    background: url(../img/NOSSA\ INSPIRAÇÕES.svg);
+    background: url(../img/NOSSA-INSPIRAÇÕES.svg);
   }
 
   .card-2 {
-    background: url(../img/NOSSA\ LOJA.svg);
+    background: url(../img/NOSSA-LOJA.svg);
   }
 
   .card-3 {
@@ -862,7 +917,7 @@ footer {
   }
 
   .card-4 {
-    background: url(../img/QUER\ PUBLICAR_.svg);
+    background: url(../img/QUER-PUBLICAR_.svg);
   }
 
   .card-5 {
@@ -870,7 +925,7 @@ footer {
   }
 
   .card-6 {
-    background: url(../img/INDIQUE\ UMA\ OBRA.svg);
+    background: url(../img/INDIQUE-UMA-OBRA.svg);
   }
 
   .contentFooter {
@@ -921,4 +976,12 @@ footer {
     min-width: 100vw;
   }
 
+  body {
+    background-color: var(--background-color);
+    overflow: hidden;
+    background-image: url(../img/backgroundPaginaInicial.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
 }
